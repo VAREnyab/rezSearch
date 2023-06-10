@@ -1,18 +1,25 @@
-import PyPDF2
+
 import pandas as pd
-import glob
-import streamlit as st
+
+
 import base64
-import io
+import io, random
+import time
 from pyresparser import ResumeParser
+
+import streamlit as st
 from streamlit_tags import st_tags
+
 import pymysql
+
 from pdfminer.layout import LAParams
 from pdfminer.pdfpage import PDFPage
 from pdfminer.pdfinterp import PDFResourceManager
 from pdfminer.pdfinterp import PDFPageInterpreter
 from pdfminer.converter import TextConverter
+
 import plotly.express as px
+
 
 
 
@@ -26,7 +33,7 @@ cursor = connection.cursor()
 st.set_page_config(page_title="Resume Search Engine", page_icon=":guardsman:", layout="wide")
 
 
-def run():
+def main():
     st.title("Resume Search Engine")
     activities = ['Normal User', 'Admin']
     
@@ -53,7 +60,7 @@ def run():
     if choice == 'Normal User':
         pdf_file = st.file_uploader("Upload your Resume", type=['pdf'])
         if pdf_file is not None:
-            save_resume_path = "r'D:\2. Resume Parser\'"+pdf_file.name
+            save_resume_path = './Sample Resumes/' + pdf_file.name
             with open(save_resume_path, 'wb') as f:
                 f.write(pdf_file.getbuffer())
             display_pdf(save_resume_path)
@@ -62,7 +69,7 @@ def run():
             if resume_data:
                 # Get the whole text
                 whole_text = extract_whole_resume(save_resume_path)
-                
+                resume_data['name'], resume_data['email'] = clean_resume_data(resume_data)    
                 
                 st.header("Resume Explanation")
                 try:
@@ -72,12 +79,48 @@ def run():
                 except:
                     pass
             
-            # Skills Show
+            # Technical Skills Show
             skill_tags = st_tags(label=f"### Skills that {resume_data['name'].capitalize()} has",
                                  value=resume_data['skills'], key='skill_set')
 
 
+            job_skills = {
+                'web_developer': [
+                    "HTML", "CSS", "JavaScript", "jQuery", "React", "Angular", "Vue.js",
+                    "PHP", "Python", "Ruby", "Node.js", "Express.js", "Django", "Flask",
+                    "MySQL", "MongoDB", "Firebase", "RESTful APIs", "Git", "Webpack"
+                ],
+                'data_scientist': [
+                    "Python", "R", "NumPy", "Pandas", "Matplotlib", "Seaborn", "Scikit-learn", "Seaborn",
+                    "TensorFlow", "Keras", "PyTorch", "SQL", "MySQL", "Hadoop", "Spark", "Data Visualization",
+                    "Machine Learning", "Statistical Analysis", "Deep Learning", "Natural Language Processing"
+                ],
+                'android': [
+                    'android', 'android development', 'flutter', 'kotlin', 'xml', 'kivy'
+                ],
+                'uiux': [
+                    'ux', 'adobe xd', 'figma', 'zeplin', 'balsamiq', 'ui', 'prototyping', 'wireframes',
+                    'storyframes', 'adobe photoshop', 'photoshop', 'editing', 'adobe illustrator',
+                    'illustrator', 'adobe after effects', 'after effects', 'adobe premier pro',
+                    'premier pro', 'adobe indesign', 'indesign', 'wireframe', 'solid', 'grasp',
+                    'user research', 'user experience'
+                ]
+            }
 
+            recommended_skills = []
+            reco_field = ''
+            for i in resume_data['skills']:
+                
+                for field, skills in job_skills.items():
+                    if i.lower() in skills:
+                        reco_field = field.replace('_', ' ').title()
+                        st.success(f"** Our analysis says you are looking for {reco_field} Jobs **")
+                        recommended_skills = job_skills[field]
+                        recommended_keywords = st_tags(label='### Recommended skills for you.',
+                                                    text='Recommended skills generated from System',
+                                                    value=recommended_skills, key=f"RecommendedSkills_{resume_data['name']}")
+                        break
+            
 # Display the pdf
 def display_pdf(pdf_file_path):
     with open(pdf_file_path, 'rb') as file:
@@ -101,69 +144,23 @@ def extract_whole_resume(pdf_files):
     fake_file_handle.close()
     return text
 
+# Clean Data
+def clean_resume_data(pdf_files):
+    resume_features = pdf_files
+    
+    # Extract Name
+    name = resume_features['name'].lower().split('email')
+    resume_features['name'] = name[0].strip()
+
+    # Extract Emails
+    email = resume_features.get('email', '').lower()
+    modified_email = email.replace("email:", "").strip()
+    resume_features['email'] = modified_email
+
+    return resume_features['name'], resume_features['email']
 
 
-run()
+# Run the Streamlit app
+if __name__ == "__main__":
+    main()
 
-# Resume Parser
-def resume_features_extraction(pdf_files):
-    parsed_data = []
-    for pdf_file in pdf_files:
-        data = ResumeParser(pdf_file, custom_regex=r'\+?\d[\d -]{8,12}\d').get_extracted_data() 
-        parsed_data.append(data)
-        
-    return parsed_data
-
-
-# Define the folder path containing the PDFs
-folder_path = r'D:\2. Resume Parser\search_engine'
-
-# Provide a list of PDF files to parse and specify the output CSV file
-pdf_files = glob.glob(folder_path + '/*.pdf')
-
-
-
-
-def clean_data(pdf_files):
-    resume_features = resume_features_extraction(pdf_files)
-    resume_texts = extract_whole_resume(pdf_files)
-    columns = []
-
-    for resume, pdf_file, resume_text in zip(resume_features, pdf_files, resume_texts):
-        if resume.get('name') and resume.get('email'):
-            # Extract Name
-            name = resume['name'].lower().split('email')
-            resume['name'] = name[0].strip()
-
-            # Extract Emails
-            email = resume.get('email', '').lower()
-            modified_email = email.replace("email:", "").strip()
-            resume['email'] = modified_email
-
-            # Extract name of the file
-            filename = pdf_file.split('\\')[-1]
-            resume_text = resume_text.split(",:")
-            
-
-            columns.append({
-                'File Name': filename,
-                'Resume Text': resume_text[1],
-                'Name': resume['name'],
-                'Email': resume['email'],
-                'Phone Number': resume['mobile_number'],
-                'Skills': ', '.join(resume['skills'])
-            })
-
-    return columns
-
-
-# def extract_whole_resume(pdf_files):
-#     resume_texts = []
-#     for pdf_file in pdf_files:
-#         with open(pdf_file, 'rb') as file:
-#             reader = PyPDF2.PdfReader(file)
-#             whole_text = ',:'
-#             for page in reader.pages:
-#                 whole_text += page.extract_text().replace('\t', ' ').replace('\n', ' ')
-#             resume_texts.append(whole_text)
-#     return resume_texts
