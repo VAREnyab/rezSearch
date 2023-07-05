@@ -1,11 +1,10 @@
 
 import pandas as pd
-
-
 import base64
 import io, random
 import time
 import uuid
+from tech_skills import non_tech_skills_list
 
 from pyresparser import ResumeParser
 
@@ -124,48 +123,17 @@ def main():
         # Technical Skills Show
         skill_tags = st_tags(label=f"### Skills that {resume_data['name'].capitalize()} has",
                                 value=resume_data['skills'], key='skill_set')
-
-
-        job_skills = {
-            'web_developer': [
-                "HTML", "CSS", "JavaScript", "jQuery", "React", "Angular", "Vue.js",
-                "PHP", "Python", "Ruby", "Node.js", "Express.js", "Django", "Flask",
-                "MySQL", "MongoDB", "Firebase", "RESTful APIs", "Git", "Webpack"
-            ],
-            'data_scientist': [
-                "Python", "R", "NumPy", "Pandas", "Matplotlib", "Seaborn", "Scikit-learn", "Seaborn",
-                "TensorFlow", "Keras", "PyTorch", "SQL", "MySQL", "Hadoop", "Spark", "Data Visualization",
-                "Machine Learning", "Statistical Analysis", "Deep Learning", "Natural Language Processing"
-            ],
-            'android': [
-                'android', 'android development', 'flutter', 'kotlin', 'xml', 'kivy'
-            ],
-            'uiux': [
-                'ux', 'adobe xd', 'figma', 'zeplin', 'balsamiq', 'ui', 'prototyping', 'wireframes',
-                'storyframes', 'adobe photoshop', 'photoshop', 'editing', 'adobe illustrator',
-                'illustrator', 'adobe after effects', 'after effects', 'adobe premier pro',
-                'premier pro', 'adobe indesign', 'indesign', 'wireframe', 'solid', 'grasp',
-                'user research', 'user experience'
-            ]
-        }
         
-        # Generate a unique key using UUID
-        unique_key = str(uuid.uuid4())
-
-        recommended_skills = []
-        reco_field = ''
-        for i in resume_data['skills']:
-            
-            for field, skills in job_skills.items():
-                if i.lower() in skills:
-                    reco_field = field.replace('_', ' ').title()
-                    st.success(f"** Our analysis says you are looking for {reco_field} Jobs **")
-                    recommended_skills = job_skills[field]
-                    st_tags(label='### Recommended skills for you.',
-                            text='Recommended skills generated from System',
-                            value=recommended_skills, 
-                            key=f'recommended_keywords_{unique_key}')
-                    break
+        
+        tech_skill = []
+        for skills in skill_tags:
+            if skills.lower() not in non_tech_skills_list:
+                tech_skill.append(skills)
+                
+                
+        st_tags(label=f"### Technical Skills that {resume_data['name'].capitalize()} has",
+                        value=tech_skill, key=f'technical_skill_set')
+                
                 
         #insert_data(resume_data['name'], resume_data['email'], resume_data['mobile_number'],str(resume_data['skills']))
         
