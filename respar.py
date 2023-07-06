@@ -4,10 +4,18 @@ import base64
 import sys, fitz
 import mysql.connector
 import openai
+import numpy as np
+from pandasai import PandasAI
+from pandasai.llm.openai import OpenAI
+import os
 
 # OpeAI API key
 key = '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'
 openai.api_key = key
+
+# Instantiate a LLM
+llm = OpenAI(api_token=key)
+pandas_ai = PandasAI(llm)
 
 # Define Streamlit app
 st.set_page_config(page_title="Resume Search Engine", page_icon=":guardsman:", layout="wide")
@@ -44,7 +52,7 @@ def prompt(text):
     6. Tools  ( Linux, ms, python, java)
     7. Experience 
     8. College name
-    9. Referrals name,
+    9. Referrals name
     10. Referrals phone number
     11. Referrals email
     12. Location
@@ -73,16 +81,26 @@ def database():
        
     
 pdf_file = st.file_uploader("Upload your Resume", type=['pdf'])
+
+
+# Check if a file is uploaded
 if pdf_file is not None:
     save_resume_path = './Sample Resumes/' + pdf_file.name
     with open(save_resume_path, 'wb') as f:
         f.write(pdf_file.getbuffer())
     display_pdf(save_resume_path)
+    
+    # Path to the folder
+    folder_path = './Sample Resumes'
 
+    # Get file names in the folder
+    file_names = os.listdir(folder_path)
 
-   
-# Check if a file is uploaded
-if pdf_file is not None:
+    # Display the file names in the sidebar
+    st.sidebar.header("Resumes uploaded")
+    for file_name in file_names:
+        st.sidebar.write(file_name)
+    
     # Read the PDF file
     pdf_data = pdf_file.read()
 
@@ -146,8 +164,38 @@ if pdf_file is not None:
         cursor.close()
         db.close()
         
-        st.table(data)
+        # Convert data to a dataframe
+        df2 = pd.DataFrame(data)
         
+        st.dataframe(df2)
+        
+        st.dataframe(pandas_ai(df, prompt='Only display columns like skills, tools'))
+        
+        
+        
+        
+        
+        end = st.button("QUIT?")
+        if end:
+            folder_path = './Sample Resumes'
+
+            # Get file names in the folder
+            file_names = os.listdir(folder_path)
+
+            # Iterate over the file names and delete each file
+            for file_name in file_names:
+                file_path = os.path.join(folder_path, file_name)
+                if os.path.isfile(file_path):
+                    os.remove(file_path)
+                    
+            db = database()
+            cursor = db.cursor()
+
+            cursor.execute("DELETE FROM resume_text")
+            cursor.execute("DELETE FROM resume_detail")
+
+            cursor.close()
+            db.close()
     
     
     

@@ -29,3 +29,8 @@ non_tech_skills = ['Fitness', 'Design','Pharmaceutical','Interative'
 
 non_tech_skills_list = [item.lower() for item in non_tech_skills]
    
+   
+
+        
+        
+    
