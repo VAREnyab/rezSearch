@@ -10,7 +10,7 @@ from pandasai.llm.openai import OpenAI
 import os
 
 # OpeAI API key
-key = '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'
+key = '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'
 openai.api_key = key
 
 # Instantiate a LLM
@@ -173,7 +173,7 @@ if pdf_file is not None:
         prompt_from_user = st.text_area("Enter your prompt: ")
         
         if st.button("Generate:"):
-            if prompt:
+            if prompt_from_user:
                 st.write("PandasAI is generating an answer, please wait ...")
 
                 pandas_ai.run(df2, prompt=prompt_from_user)
