@@ -169,33 +169,39 @@ if pdf_file is not None:
         
         st.dataframe(df2)
         
-        st.dataframe(pandas_ai(df, prompt='Only display columns like skills, tools'))
+        # Prompt the user for columns to display
+        prompt_from_user = st.text_area("Enter your prompt: ")
         
-        
-        
-        
-        
-        end = st.button("QUIT?")
-        if end:
-            folder_path = './Sample Resumes'
+        if st.button("Generate:"):
+            if prompt:
+                st.write("PandasAI is generating an answer, please wait ...")
 
-            # Get file names in the folder
-            file_names = os.listdir(folder_path)
+                pandas_ai.run(df2, prompt=prompt_from_user)
+            
+            else:
+                st.warning("Enter a prompt")
+        
+  
+        # if st.button("QUIT?"):
+        #     folder_path = './Sample Resumes'
 
-            # Iterate over the file names and delete each file
-            for file_name in file_names:
-                file_path = os.path.join(folder_path, file_name)
-                if os.path.isfile(file_path):
-                    os.remove(file_path)
+        #     # Get file names in the folder
+        #     file_names = os.listdir(folder_path)
+
+        #     # Iterate over the file names and delete each file
+        #     for file_name in file_names:
+        #         file_path = os.path.join(folder_path, file_name)
+        #         if os.path.isfile(file_path):
+        #             os.remove(file_path)
                     
-            db = database()
-            cursor = db.cursor()
+        #     db = database()
+        #     cursor = db.cursor()
 
-            cursor.execute("DELETE FROM resume_text")
-            cursor.execute("DELETE FROM resume_detail")
+        #     cursor.execute("DELETE FROM resume_text")
+        #     cursor.execute("DELETE FROM resume_detail")
 
-            cursor.close()
-            db.close()
+        #     cursor.close()
+        #     db.close()
     
     
     

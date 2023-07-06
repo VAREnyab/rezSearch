@@ -1,0 +1,4 @@
+2023-07-06 20:45:57 [INFO] Question: Only display columns like skills, tools
+2023-07-06 20:45:57 [INFO] Running PandasAI with openai LLM...
+2023-07-06 20:45:57 [INFO] Prompt ID: b49c7799-47b8-4800-a22b-c3d0376ccb5b
+2023-07-06 21:09:27 [INFO] error_code=None error_message='Rate limit reached for default-gpt-3.5-turbo in organization org-vn26Gf74xxQSs7Osxfs6NVyc on requests per min. Limit: 3 / min. Please try again in 20s. Contact us through our help center at help.openai.com if you continue to have issues. Please add a payment method to your account to increase your rate limit. Visit https://platform.openai.com/account/billing to add a payment method.' error_param=None error_type=requests message='OpenAI API error received' stream_error=False
