@@ -1,21 +1,14 @@
 import streamlit as st
 import pandas as pd
 import base64
-import sys, fitz
+import fitz
 import mysql.connector
 import openai
-import numpy as np
-from pandasai import PandasAI
-from pandasai.llm.openai import OpenAI
 import os
 
 # OpeAI API key
 key = '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'
 openai.api_key = key
-
-# Instantiate a LLM
-llm = OpenAI(api_token=key)
-pandas_ai = PandasAI(llm)
 
 # Define Streamlit app
 st.set_page_config(page_title="Resume Search Engine", page_icon=":guardsman:", layout="wide")
@@ -150,36 +143,9 @@ if pdf_file is not None:
     cursor.close()
     db.close()
     
-    end_resume_upload = st.button("Done Uploading Resumes?")
     
-    if end_resume_upload:
-        db = database()
-        cursor = db.cursor()
-        # Execute the SQL query
-        cursor.execute("SELECT * FROM resume_detail")
-        
-        # Fetch the data
-        data = cursor.fetchall()
-        # Close the cursor and database connection
-        cursor.close()
-        db.close()
-        
-        # Convert data to a dataframe
-        df2 = pd.DataFrame(data)
-        
-        st.dataframe(df2)
-        
-        # Prompt the user for columns to display
-        prompt_from_user = st.text_area("Enter your prompt: ")
-        
-        if st.button("Generate:"):
-            if prompt_from_user:
-                st.write("PandasAI is generating an answer, please wait ...")
-
-                pandas_ai.run(df2, prompt=prompt_from_user)
-            
-            else:
-                st.warning("Enter a prompt")
+    if st.button("Done Uploading Resumes?"):
+        st.write("Go to next page")
         
   
         # if st.button("QUIT?"):
