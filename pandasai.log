@@ -1,0 +1,52 @@
+2023-07-07 14:29:25 [INFO] Question: remove duplicates
+2023-07-07 14:29:25 [INFO] Running PandasAI with openai LLM...
+2023-07-07 14:29:25 [INFO] Prompt ID: 6c35c016-a7f5-4544-ab9d-dd77506b6686
+2023-07-07 14:30:21 [INFO] Question: give the length of the dataset
+
+2023-07-07 14:30:21 [INFO] Running PandasAI with openai LLM...
+2023-07-07 14:30:21 [INFO] Prompt ID: cca328e3-9849-4a6c-9d80-2e5250017a5a
+2023-07-08 10:58:37 [INFO] Question: Give me the details of skills Java
+
+2023-07-08 10:58:37 [INFO] Running PandasAI with openai LLM...
+2023-07-08 10:58:37 [INFO] Prompt ID: 71f5255f-57bc-455f-b49e-c7358f98de77
+2023-07-08 11:02:14 [INFO] Question: Give the length of the data
+
+2023-07-08 11:02:14 [INFO] Running PandasAI with openai LLM...
+2023-07-08 11:02:14 [INFO] Prompt ID: f094a96d-7cc8-4f9a-a94f-7fb6420e9240
+2023-07-08 11:02:16 [INFO] 
+                        Code generated:
+                        ```
+                        length = len(df)
+print(length)
+                        ```
+                    
+2023-07-08 11:02:16 [INFO] 
+Code running:
+```
+length = len(df)
+print(length)
+```
+2023-07-08 11:02:16 [INFO] Answer: 3
+2023-07-08 11:02:16 [INFO] Executed in: 1.7034661769866943s
+2023-07-08 11:02:32 [INFO] Question: Give all the details of skills containing C
+
+2023-07-08 11:02:32 [INFO] Running PandasAI with openai LLM...
+2023-07-08 11:02:32 [INFO] Prompt ID: 1ece9224-d750-4525-b49e-a7e78c0ae295
+2023-07-08 11:02:35 [INFO] 
+                        Code generated:
+                        ```
+                        df[df['skills'].str.contains('C')]
+                        ```
+                    
+2023-07-08 11:02:35 [INFO] 
+Code running:
+```
+df[df['skills'].str.contains('C')]
+```
+2023-07-08 11:02:35 [INFO] Answer:    id          name                            email   phone_number  ...                                   referrals_email   location companies_worked_at designation
+0  68       SHRAVYA  2117106shravya@staloysius.ac.in  +916361229641  ...  santhoshb@staloysius.ac.in, hemasree71@gmail.com  Mangalore                 Nan         Nan
+2  70  FLAMI DCOSTA            flamidcosta@gmail.com     9108126684  ...                            ruban@staloysius.ac.in  Mangalore                 Nan         Nan
+
+[2 rows x 15 columns]
+2023-07-08 11:02:35 [INFO] Executed in: 2.9099531173706055s
+2023-07-08 11:03:49 [INFO] error_code=502 error_message='Bad gateway.' error_param=None error_type=cf_bad_gateway message='OpenAI API error received' stream_error=False

@@ -6,6 +6,9 @@ import mysql.connector
 import openai
 import os
 
+st.set_page_config(page_title="Upload Resumes", page_icon=":guardsman:", layout="wide")
+st.title("Upload Resumes")
+
 # OpeAI API key
 key = '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'
 openai.api_key = key
@@ -122,22 +125,33 @@ if pdf_file is not None:
 
     # Create a cursor
     cursor = db.cursor()
-
-    # Insert the extracted text into the database
-    # Insert in table name resume_text
-    insert_query = "INSERT INTO resume_text (text) VALUES (%s)"
-    cursor.execute(insert_query, (text,))
-    db.commit()
     
-    # Insert in table name resume_details
-    for index, row in df.iterrows():
-        insert_query = "INSERT INTO resume_detail (name, email, phone_number, linkedin_id, skills, tools, experience, college_name, referrals_name, referrals_phone_number, referrals_email, location, companies_worked_at, designation) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
-        cursor.execute(insert_query, (row['Name'], row['Email ID'], row['Phone number'], 
-                                      row['LinkedIn ID'], row['Skills'], row['Tools'], 
-                                      row['Experience'], row['College name'], row['Referrals name'], 
-                                      row['Referrals phone number'], row['Referrals email'], row['Location'], 
-                                      row['Companies worked at'], row['Designation']))
+    # Check if the PDF already exists in the database
+    select_query = "SELECT * FROM resume_text WHERE text = %s"
+    cursor.execute(select_query, (text,))
+    existing_data = cursor.fetchone()
+    
+    
+
+    if existing_data:
+        # PDF already exists, skip insertion
+        st.write("PDF already uploaded. Skipping insertion.")
+    else:
+        # Insert the extracted text into the database
+        # Insert in table name resume_text
+        insert_query = "INSERT INTO resume_text (text) VALUES (%s)"
+        cursor.execute(insert_query, (text,))
         db.commit()
+        
+        # Insert in table name resume_details
+        for index, row in df.iterrows():
+            insert_query = "INSERT INTO resume_detail (name, email, phone_number, linkedin_id, skills, tools, experience, college_name, referrals_name, referrals_phone_number, referrals_email, location, companies_worked_at, designation) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+            cursor.execute(insert_query, (row['Name'], row['Email ID'], row['Phone number'], 
+                                        row['LinkedIn ID'], row['Skills'], row['Tools'], 
+                                        row['Experience'], row['College name'], row['Referrals name'], 
+                                        row['Referrals phone number'], row['Referrals email'], row['Location'], 
+                                        row['Companies worked at'], row['Designation']))
+            db.commit()
 
     # Close the cursor and database connection
     cursor.close()
@@ -165,6 +179,9 @@ if pdf_file is not None:
 
         #     cursor.execute("DELETE FROM resume_text")
         #     cursor.execute("DELETE FROM resume_detail")
+        #     cursor.execute("ALTER TABLE resume_text AUTO_INCREMENT = 1")
+        #     cursor.execute("ALTER TABLE resume_detail AUTO_INCREMENT = 1")
+
 
         #     cursor.close()
         #     db.close()

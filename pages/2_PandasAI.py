@@ -4,6 +4,9 @@ from pandasai.llm.openai import OpenAI
 import pandas as pd
 import streamlit as st
 
+st.set_page_config(page_title="Pandas AI", page_icon=":guardsman:", layout="wide")
+st.title("Pandas AI")
+
 key_pandas = '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'
 
 # Instantiate a LLM
@@ -34,14 +37,8 @@ data = cursor.fetchall()
 cursor.close()
 db.close()
 
-
-
-
 # Convert data to a dataframe
 df = pd.DataFrame(data, columns=columns)
-
-
-
 
 st.dataframe(df)
 
