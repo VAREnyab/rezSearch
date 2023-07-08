@@ -1,10 +1,48 @@
+import mysql.connector
 import pandas as pd
 import streamlit as st
 from fuzzywuzzy import fuzz
+import base64
 
 # Read in data from Excel file
 data = pd.read_excel("resume_extracted.xlsx")
-data['Tags'] = data['Tags'].astype(str)
+
+def database():
+    # Connect to MySQL database
+    db = mysql.connector.connect(
+        host='127.0.0.1',
+        user='root',
+        password='mysql30',
+        database='resu'
+    )
+    return db
+
+# Display the pdf
+def display_pdf(pdf_file_path):
+    with open(pdf_file_path, 'rb') as file:
+        base64_pdf = base64.b64encode(file.read()).decode('utf-8')
+    resume_pdf_display = F'<iframe src="data:application/pdf;base64,{base64_pdf}" width="700" height="1000" type="application/pdf"></iframe>'
+    st.markdown(resume_pdf_display, unsafe_allow_html=True)
+    
+
+db = database()
+cursor = db.cursor()
+# Execute the SQL query
+cursor.execute("SELECT * FROM resume_keyword")
+
+# Fetch the column names from the cursor description
+columns = [col[0] for col in cursor.description]
+
+# Fetch the data
+db_data = cursor.fetchall()
+# Close the cursor and database connection
+cursor.close()
+db.close()
+
+# Convert data to a dataframe
+data = pd.DataFrame(db_data, columns=columns)
+
+data['keyword'] = data['keyword'].astype(str)
 
 # Define function for fuzzy string matching
 def similarity_fuzzy(word1, word2):
@@ -18,7 +56,7 @@ def get_top_resumes(search_word, threshold):
     words = []
     for i in range(len(data)):
         name.append(data.loc[i, "filename"])
-        words.append(data.loc[i, "Tags"].split(","))
+        words.append(data.loc[i, "keyword"].split(","))
     
     i = 0
     score_dict = dict()
@@ -33,8 +71,6 @@ def get_top_resumes(search_word, threshold):
     
     return ranked_dict
 
-# Define Streamlit app
-st.set_page_config(page_title="Resume Search Engine", page_icon=":guardsman:", layout="wide")
 st.title("Resume Search Engine")
 
 # Create search box and button
@@ -58,8 +94,9 @@ if search_word != "":
         selected_resume = st.selectbox("Select a resume to view:", df['filename'], key="resume_select")
 
         if selected_resume:
-            st.write("Resume text:")
-            st.write(data.loc[data["filename"]==selected_resume, "resume text"].values[0])
+            st.write("Resume:")
+            # st.write(data.loc[data["filename"]==selected_resume, "text"].values[0])
+            display_pdf(selected_resume)
     else:
         st.write("No matching resumes found.")
 else:

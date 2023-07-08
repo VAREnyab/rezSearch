@@ -13,8 +13,6 @@ st.title("Upload Resumes")
 key = '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'
 openai.api_key = key
 
-# Define Streamlit app
-st.set_page_config(page_title="Resume Search Engine", page_icon=":guardsman:", layout="wide")
 
 # Display the pdf
 def display_pdf(pdf_file_path):
@@ -54,6 +52,7 @@ def prompt(text):
     12. Location
     13. Companies worked at
     14. Designation 
+    15. Keywords (give all technical skills, separated by commas (e.g., C, C++, Python, Java, programming etc))
     
 
     Seperate the details with :
@@ -132,7 +131,6 @@ if pdf_file is not None:
     existing_data = cursor.fetchone()
     
     
-
     if existing_data:
         # PDF already exists, skip insertion
         st.write("PDF already uploaded. Skipping insertion.")
@@ -151,6 +149,16 @@ if pdf_file is not None:
                                         row['Experience'], row['College name'], row['Referrals name'], 
                                         row['Referrals phone number'], row['Referrals email'], row['Location'], 
                                         row['Companies worked at'], row['Designation']))
+            db.commit()
+            
+        # Insert in table name resume_keyword
+        for index, row in df.iterrows():
+            # Get the values from the dataframe
+            keyword = row['Keywords']
+            
+            # Insert the values into the table
+            insert_query = "INSERT INTO resume_keyword (filename, text, keyword) VALUES (%s, %s, %s)"
+            cursor.execute(insert_query, (save_resume_path, text, keyword))
             db.commit()
 
     # Close the cursor and database connection
