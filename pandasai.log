@@ -50,3 +50,122 @@ df[df['skills'].str.contains('C')]
 [2 rows x 15 columns]
 2023-07-08 11:02:35 [INFO] Executed in: 2.9099531173706055s
 2023-07-08 11:03:49 [INFO] error_code=502 error_message='Bad gateway.' error_param=None error_type=cf_bad_gateway message='OpenAI API error received' stream_error=False
+2023-07-11 19:23:43 [INFO] Question: Give all details from K APARNA
+
+2023-07-11 19:23:43 [INFO] Running PandasAI with openai LLM...
+2023-07-11 19:23:43 [INFO] Prompt ID: 2df8edce-9015-4774-9006-128af11547f6
+2023-07-11 19:23:46 [INFO] 
+                        Code generated:
+                        ```
+                        df[df['name'] == 'K APARNA']
+                        ```
+                    
+2023-07-11 19:23:46 [INFO] 
+Code running:
+```
+df[df['name'] == 'K APARNA']
+```
+2023-07-11 19:23:46 [INFO] Answer:    id      name                 email phone_number linkedin_id  ... referrals_phone_number       referrals_email location companies_worked_at designation
+2   6  K APARNA  aparnak743@gmail.com   9188049406         Nan  ...         +91 9495870533  hemasree71@gmail.com      Nan                 Nan         Nan
+
+[1 rows x 15 columns]
+2023-07-11 19:23:46 [INFO] Executed in: 2.6481735706329346s
+2023-07-11 20:17:41 [INFO] Question: who has Data Scientist
+
+2023-07-11 20:17:41 [INFO] Running PandasAI with openai LLM...
+2023-07-11 20:17:41 [INFO] Prompt ID: 3dcd1e7e-7596-4abb-b603-97556d9409d7
+2023-07-11 20:17:43 [INFO] 
+                        Code generated:
+                        ```
+                        df[df['designation'] == 'Data Scientist']
+                        ```
+                    
+2023-07-11 20:17:43 [INFO] 
+Code running:
+```
+df[df['designation'] == 'Data Scientist']
+```
+2023-07-11 20:17:44 [INFO] Answer: Empty DataFrame
+Columns: [id, name, email, phone_number, linkedin_id, skills, tools, experience, college_name, referrals_name, referrals_phone_number, referrals_email, location, companies_worked_at, designation]
+Index: []
+2023-07-11 20:17:44 [INFO] Executed in: 2.4549057483673096s
+2023-07-11 20:18:12 [INFO] Question: companies worked at wipro
+
+
+2023-07-11 20:18:12 [INFO] Running PandasAI with openai LLM...
+2023-07-11 20:18:12 [INFO] Prompt ID: c315d1b0-3c68-48df-8006-92bdbf5db408
+2023-07-11 20:18:15 [INFO] 
+                        Code generated:
+                        ```
+                        df[df['companies_worked_at'].str.contains('Wipro')]
+                        ```
+                    
+2023-07-11 20:18:15 [INFO] 
+Code running:
+```
+df[df['companies_worked_at'].str.contains('Wipro')]
+```
+2023-07-11 20:18:15 [INFO] Answer:    id  ...                                        designation
+1   5  ...  Data Scientist, Business Analyst, Tech Consult...
+
+[1 rows x 15 columns]
+2023-07-11 20:18:15 [INFO] Executed in: 2.602140188217163s
+2023-07-12 13:17:50 [INFO] Question: Give me details of Anupam Biswas
+
+2023-07-12 13:17:50 [INFO] Running PandasAI with openai LLM...
+2023-07-12 13:17:50 [INFO] Prompt ID: da336b12-7a9a-483b-8dfc-2cb86a4e5903
+2023-07-12 13:17:54 [INFO] 
+                        Code generated:
+                        ```
+                        df[df['name'] == 'Anupam Biswas']
+                        ```
+                    
+2023-07-12 13:17:54 [INFO] 
+Code running:
+```
+df[df['name'] == 'Anupam Biswas']
+```
+2023-07-12 13:17:54 [INFO] Answer:    id           name  ... companies_worked_at                                        designation
+3   7  Anupam Biswas  ...      IBM, Cognizant  Associate Consultant, Business Analytics Lead,...
+
+[1 rows x 15 columns]
+2023-07-12 13:17:54 [INFO] Executed in: 4.3542234897613525s
+2023-07-12 13:18:18 [INFO] Question: Who has skills Java
+
+2023-07-12 13:18:18 [INFO] Running PandasAI with openai LLM...
+2023-07-12 13:18:18 [INFO] Prompt ID: a1fcc980-c3c8-44e0-b3de-3d05afd301a3
+2023-07-12 13:18:21 [INFO] 
+                        Code generated:
+                        ```
+                        df[df['skills'].str.contains('Java')]
+                        ```
+                    
+2023-07-12 13:18:21 [INFO] 
+Code running:
+```
+df[df['skills'].str.contains('Java')]
+```
+2023-07-12 13:18:21 [INFO] Answer:    id      name                           email  ...   location companies_worked_at designation
+0   4    SHRIYA  2117108shriya@staloysius.ac.in  ...  Mangalore                 Nan         Nan
+2   6  K APARNA            aparnak743@gmail.com  ...        Nan                 Nan         Nan
+
+[2 rows x 15 columns]
+2023-07-12 13:18:21 [INFO] Executed in: 3.0252981185913086s
+2023-07-12 16:53:34 [INFO] Question: Give the name of who has skills Machine Learning
+
+2023-07-12 16:53:34 [INFO] Running PandasAI with openai LLM...
+2023-07-12 16:53:34 [INFO] Prompt ID: 92435256-846a-40d0-bfe7-f6bb54e86bbb
+2023-07-12 16:53:38 [INFO] 
+                        Code generated:
+                        ```
+                        df[df['skills'].str.contains('Machine Learning')]['name']
+                        ```
+                    
+2023-07-12 16:53:38 [INFO] 
+Code running:
+```
+df[df['skills'].str.contains('Machine Learning')]['name']
+```
+2023-07-12 16:53:38 [INFO] Answer: 1    Srinivas Kandlikar
+Name: name, dtype: object
+2023-07-12 16:53:38 [INFO] Executed in: 3.2163383960723877s

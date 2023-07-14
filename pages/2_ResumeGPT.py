@@ -4,8 +4,8 @@ from pandasai.llm.openai import OpenAI
 import pandas as pd
 import streamlit as st
 
-st.set_page_config(page_title="Pandas AI", page_icon=":guardsman:", layout="wide")
-st.title("Pandas AI")
+st.set_page_config(page_title="ResumeGPT", page_icon=":guardsman:", layout="wide")
+st.title("ResumeGPT")
 
 key_pandas = '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'
 

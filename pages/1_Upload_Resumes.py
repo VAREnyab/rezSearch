@@ -58,7 +58,7 @@ def prompt(text):
     Seperate the details with :
     Skills and Tools details should all be in seperate "" and seperated by a comma
     If any of the details isnt existing on the text return "Nan"
-    Put all these details into into a dictionary 
+    Put all these details into a dictionary 
 
     """
     return get_completion(prompt)
