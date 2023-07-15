@@ -3,3 +3,8 @@
 'Give me details of Anupam Biswas\n', (1536, 43)
 'Who has skills Java\n', (2048, 47)
 'Give the name of who has skills Machine Learning\n', (2560, 67)
+'Give only the details of those who have linkedin_id\n', (3072, 41)
+'Give only the details of those who have linkedin_id not Nan\n\n', (3584, 41)
+'Give only the details of those who dont have linkedin_id not Nan\n\n', (4096, 39)
+"Give only the details of those who don't have linkedin_id as Nan\n\n", (4608, 40)
+'Only give column linkedin_id which dont have Nan\n\n', (5120, 36)

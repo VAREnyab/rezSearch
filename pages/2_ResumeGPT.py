@@ -1,8 +1,8 @@
-import mysql.connector
 from pandasai import PandasAI
 from pandasai.llm.openai import OpenAI
 import pandas as pd
 import streamlit as st
+from call import database
 
 st.set_page_config(page_title="ResumeGPT", page_icon=":guardsman:", layout="wide")
 st.title("ResumeGPT")
@@ -13,15 +13,6 @@ key_pandas = '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'
 llm = OpenAI(api_token=key_pandas)
 pandas_ai = PandasAI(llm)
 
-def database():
-    # Connect to MySQL database
-    db = mysql.connector.connect(
-        host='127.0.0.1',
-        user='root',
-        password='mysql30',
-        database='resu'
-    )
-    return db
 
 db = database()
 cursor = db.cursor()

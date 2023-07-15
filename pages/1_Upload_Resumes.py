@@ -2,9 +2,9 @@ import streamlit as st
 import pandas as pd
 import base64
 import fitz
-import mysql.connector
 import openai
 import os
+from call import database
 
 st.set_page_config(page_title="Upload Resumes", page_icon=":guardsman:", layout="wide")
 st.title("Upload Resumes")
@@ -12,7 +12,6 @@ st.title("Upload Resumes")
 # OpeAI API key
 key = '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'
 openai.api_key = key
-
 
 # Display the pdf
 def display_pdf(pdf_file_path):
@@ -63,18 +62,6 @@ def prompt(text):
     """
     return get_completion(prompt)
 
-
-def database():
-    # Connect to MySQL database
-    db = mysql.connector.connect(
-        host='127.0.0.1',
-        user='root',
-        password='mysql30',
-        database='resu'
-    )
-    return db
-       
-    
 pdf_file = st.file_uploader("Upload your Resume", type=['pdf'])
 
 

@@ -169,3 +169,138 @@ df[df['skills'].str.contains('Machine Learning')]['name']
 2023-07-12 16:53:38 [INFO] Answer: 1    Srinivas Kandlikar
 Name: name, dtype: object
 2023-07-12 16:53:38 [INFO] Executed in: 3.2163383960723877s
+2023-07-15 08:10:38 [INFO] Question: Give only the details of those who have linkedin_id
+
+2023-07-15 08:10:38 [INFO] Running PandasAI with openai LLM...
+2023-07-15 08:10:38 [INFO] Prompt ID: b9bbfa4f-76f0-49cb-ba14-cc15e0cda098
+2023-07-15 08:10:41 [INFO] 
+                        Code generated:
+                        ```
+                        df[df['linkedin_id'].notnull()]
+                        ```
+                    
+2023-07-15 08:10:41 [INFO] 
+Code running:
+```
+df[df['linkedin_id'].notnull()]
+```
+2023-07-15 08:10:41 [INFO] Answer:    id                name  ...                                companies_worked_at                             designation
+0   1              SHRIYA  ...                                                Nan                                     Nan
+1   2  Srinivas Kandlikar  ...  Ineuron.ai, HCL Technologies, Prithvi Consulti...  Technical Lead, Sr. Software Developer
+2   3       Mayank Sahdev  ...                                Deloitte Consulting                                     Nan
+3   4        Ramyashree K  ...                                                Nan                                     Nan
+4   5        JEROME MANOJ  ...                        Wipro Ltd, Asset Healthcare                   Data Science Engineer
+5   6        Rachana Alva  ...                                                Nan                                     Nan
+6   7         ARYA BABU M  ...                                                Nan                                     Nan
+7   8   CLEONA J MONTEIRO  ...                                                Nan                                     Nan
+8   9       Monish Shetty  ...                                                Nan                                     Nan
+
+[9 rows x 15 columns]
+2023-07-15 08:10:41 [INFO] Executed in: 3.698974370956421s
+2023-07-15 08:10:54 [INFO] Question: Give only the details of those who have linkedin_id not Nan
+
+
+2023-07-15 08:10:54 [INFO] Running PandasAI with openai LLM...
+2023-07-15 08:10:54 [INFO] Prompt ID: bb4c0ce4-d03b-44da-a579-73f6736a253d
+2023-07-15 08:10:58 [INFO] 
+                        Code generated:
+                        ```
+                        df[df['linkedin_id'].notnull()]
+                        ```
+                    
+2023-07-15 08:10:58 [INFO] 
+Code running:
+```
+df[df['linkedin_id'].notnull()]
+```
+2023-07-15 08:10:58 [INFO] Answer:    id                name  ...                                companies_worked_at                             designation
+0   1              SHRIYA  ...                                                Nan                                     Nan
+1   2  Srinivas Kandlikar  ...  Ineuron.ai, HCL Technologies, Prithvi Consulti...  Technical Lead, Sr. Software Developer
+2   3       Mayank Sahdev  ...                                Deloitte Consulting                                     Nan
+3   4        Ramyashree K  ...                                                Nan                                     Nan
+4   5        JEROME MANOJ  ...                        Wipro Ltd, Asset Healthcare                   Data Science Engineer
+5   6        Rachana Alva  ...                                                Nan                                     Nan
+6   7         ARYA BABU M  ...                                                Nan                                     Nan
+7   8   CLEONA J MONTEIRO  ...                                                Nan                                     Nan
+8   9       Monish Shetty  ...                                                Nan                                     Nan
+
+[9 rows x 15 columns]
+2023-07-15 08:10:58 [INFO] Executed in: 3.3316614627838135s
+2023-07-15 08:11:18 [INFO] Question: Give only the details of those who dont have linkedin_id not Nan
+
+
+2023-07-15 08:11:18 [INFO] Running PandasAI with openai LLM...
+2023-07-15 08:11:18 [INFO] Prompt ID: 6a802100-a1ae-4e53-b67a-da5853cf0000
+2023-07-15 08:11:21 [INFO] 
+                        Code generated:
+                        ```
+                        df[df['linkedin_id'].notna()]
+                        ```
+                    
+2023-07-15 08:11:21 [INFO] 
+Code running:
+```
+df[df['linkedin_id'].notna()]
+```
+2023-07-15 08:11:21 [INFO] Answer:    id                name  ...                                companies_worked_at                             designation
+0   1              SHRIYA  ...                                                Nan                                     Nan
+1   2  Srinivas Kandlikar  ...  Ineuron.ai, HCL Technologies, Prithvi Consulti...  Technical Lead, Sr. Software Developer
+2   3       Mayank Sahdev  ...                                Deloitte Consulting                                     Nan
+3   4        Ramyashree K  ...                                                Nan                                     Nan
+4   5        JEROME MANOJ  ...                        Wipro Ltd, Asset Healthcare                   Data Science Engineer
+5   6        Rachana Alva  ...                                                Nan                                     Nan
+6   7         ARYA BABU M  ...                                                Nan                                     Nan
+7   8   CLEONA J MONTEIRO  ...                                                Nan                                     Nan
+8   9       Monish Shetty  ...                                                Nan                                     Nan
+
+[9 rows x 15 columns]
+2023-07-15 08:11:21 [INFO] Executed in: 3.516930103302002s
+2023-07-15 08:11:37 [INFO] Question: Give only the details of those who don't have linkedin_id as Nan
+
+
+2023-07-15 08:11:37 [INFO] Running PandasAI with openai LLM...
+2023-07-15 08:11:37 [INFO] Prompt ID: 69d5de27-5849-407a-8c87-f3220e74f199
+2023-07-15 08:11:40 [INFO] 
+                        Code generated:
+                        ```
+                        df[df['linkedin_id'] != 'Nan']
+                        ```
+                    
+2023-07-15 08:11:40 [INFO] 
+Code running:
+```
+df[df['linkedin_id'] != 'Nan']
+```
+2023-07-15 08:11:40 [INFO] Answer:    id                name  ...                                companies_worked_at                             designation
+1   2  Srinivas Kandlikar  ...  Ineuron.ai, HCL Technologies, Prithvi Consulti...  Technical Lead, Sr. Software Developer
+8   9       Monish Shetty  ...                                                Nan                                     Nan
+
+[2 rows x 15 columns]
+2023-07-15 08:11:40 [INFO] Executed in: 3.5280191898345947s
+2023-07-15 08:14:49 [INFO] Question: Only give column linkedin_id which dont have Nan
+
+
+2023-07-15 08:14:49 [INFO] Running PandasAI with openai LLM...
+2023-07-15 08:14:49 [INFO] Prompt ID: a1499eda-50bd-4e05-930b-45ed6cd6efcd
+2023-07-15 08:14:51 [INFO] 
+                        Code generated:
+                        ```
+                        df['linkedin_id'].dropna()
+                        ```
+                    
+2023-07-15 08:14:51 [INFO] 
+Code running:
+```
+df['linkedin_id'].dropna()
+```
+2023-07-15 08:14:51 [INFO] Answer: 0                               Nan
+1     srinivas kandlikar | LinkedIn
+2                               Nan
+3                               Nan
+4                               Nan
+5                               Nan
+6                               Nan
+7                               Nan
+8    linkedin.com/in/monish-shetty/
+Name: linkedin_id, dtype: object
+2023-07-15 08:14:51 [INFO] Executed in: 2.003108263015747s
