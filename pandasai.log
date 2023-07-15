@@ -304,3 +304,10 @@ df['linkedin_id'].dropna()
 8    linkedin.com/in/monish-shetty/
 Name: linkedin_id, dtype: object
 2023-07-15 08:14:51 [INFO] Executed in: 2.003108263015747s
+2023-07-15 08:19:52 [INFO] Applicable driver not found; attempting to install with Selenium Manager (Beta)
+2023-07-15 08:20:25 [INFO] Applicable driver not found; attempting to install with Selenium Manager (Beta)
+2023-07-15 08:21:16 [INFO] Applicable driver not found; attempting to install with Selenium Manager (Beta)
+2023-07-15 08:21:52 [INFO] Applicable driver not found; attempting to install with Selenium Manager (Beta)
+2023-07-15 08:24:06 [INFO] Applicable driver not found; attempting to install with Selenium Manager (Beta)
+2023-07-15 08:24:40 [INFO] Applicable driver not found; attempting to install with Selenium Manager (Beta)
+2023-07-15 08:29:08 [INFO] Applicable driver not found; attempting to install with Selenium Manager (Beta)
