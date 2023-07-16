@@ -1,21 +1,12 @@
-import mysql.connector
 import pandas as pd
 import streamlit as st
 from fuzzywuzzy import fuzz
 import base64
+from call import database
+
 
 # Read in data from Excel file
 data = pd.read_excel("resume_extracted.xlsx")
-
-def database():
-    # Connect to MySQL database
-    db = mysql.connector.connect(
-        host='127.0.0.1',
-        user='root',
-        password='mysql30',
-        database='resu'
-    )
-    return db
 
 # Display the pdf
 def display_pdf(pdf_file_path):

@@ -311,3 +311,44 @@ Name: linkedin_id, dtype: object
 2023-07-15 08:24:06 [INFO] Applicable driver not found; attempting to install with Selenium Manager (Beta)
 2023-07-15 08:24:40 [INFO] Applicable driver not found; attempting to install with Selenium Manager (Beta)
 2023-07-15 08:29:08 [INFO] Applicable driver not found; attempting to install with Selenium Manager (Beta)
+2023-07-15 14:46:04 [INFO] Question: Give details of those whose skills are Python
+
+2023-07-15 14:46:04 [INFO] Running PandasAI with openai LLM...
+2023-07-15 14:46:04 [INFO] Prompt ID: 8519b2fc-67dd-49fb-9aa3-36b07162ff3e
+2023-07-15 14:46:05 [INFO] 
+                        Code generated:
+                        ```
+                        df[df['skills'] == 'Python']
+                        ```
+                    
+2023-07-15 14:46:05 [INFO] 
+Code running:
+```
+df[df['skills'] == 'Python']
+```
+2023-07-15 14:46:05 [INFO] Answer: Empty DataFrame
+Columns: [id, name, email, phone_number, linkedin_id, skills, tools, experience, college_name, referrals_name, referrals_phone_number, referrals_email, location, companies_worked_at, designation]
+Index: []
+2023-07-15 14:46:05 [INFO] Executed in: 1.7303087711334229s
+2023-07-15 14:46:39 [INFO] Question: Give details of SHRAVYA
+
+2023-07-15 14:46:39 [INFO] Running PandasAI with openai LLM...
+2023-07-15 14:46:39 [INFO] Prompt ID: f805a209-7f9f-4477-b498-9514dcf3be45
+2023-07-15 14:46:40 [INFO] 
+                        Code generated:
+                        ```
+                        df[df['name'] == 'SHRAVYA']
+                        ```
+                    
+2023-07-15 14:46:40 [INFO] 
+Code running:
+```
+df[df['name'] == 'SHRAVYA']
+```
+2023-07-15 14:46:40 [INFO] Answer:    id     name                            email  ...   location companies_worked_at designation
+9  10  SHRAVYA  2117106shravya@staloysius.ac.in  ...  Mangalore                 Nan         Nan
+
+[1 rows x 15 columns]
+2023-07-15 14:46:40 [INFO] Executed in: 1.5499136447906494s
+2023-07-15 14:47:22 [INFO] Applicable driver not found; attempting to install with Selenium Manager (Beta)
+2023-07-15 14:47:37 [INFO] Applicable driver not found; attempting to install with Selenium Manager (Beta)

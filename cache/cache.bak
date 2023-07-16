@@ -8,3 +8,5 @@
 'Give only the details of those who dont have linkedin_id not Nan\n\n', (4096, 39)
 "Give only the details of those who don't have linkedin_id as Nan\n\n", (4608, 40)
 'Only give column linkedin_id which dont have Nan\n\n', (5120, 36)
+'Give details of those whose skills are Python\n', (5632, 38)
+'Give details of SHRAVYA\n', (6144, 37)

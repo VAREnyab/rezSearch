@@ -7,7 +7,6 @@ from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 
 from call import database
-
 import openai
 
 st.set_page_config(page_title="LinkedInGPT", page_icon=":guardsman:", layout="wide")
@@ -21,7 +20,7 @@ def get_completion(prompt, model="gpt-3.5-turbo",temperature=0):
     response = openai.ChatCompletion.create(
         model=model,
         messages=messages,
-        temperature=0, # this is the degree of randomness of the model's output
+        temperature=0,
     )
     return response.choices[0].message["content"]
 
@@ -39,17 +38,17 @@ db.close()
 
 # Convert data to a dataframe
 df = pd.DataFrame(data, columns=['Linkedin_profiles'])
-st.dataframe(df)
 
 # paste the URL 
 selected_profile = st.selectbox("Select a profile to view:", [""] + df['Linkedin_profiles'].tolist(), key="profile_select")
+st.text("OR")
 profile_url = st.text_input("Enter the profile URL", "")
 
 # Creating a webdriver instance
-# Options = Options()
-# Options.add_argument('--headless=new')
-# driver = webdriver.Chrome(options=Options)
-driver = webdriver.Chrome()
+Options = Options()
+Options.add_argument('--headless=new')
+driver = webdriver.Chrome(options=Options)
+# driver = webdriver.Chrome()
 
 
 # Opening linkedIn's login page
@@ -62,13 +61,15 @@ time.sleep(5)
 username = driver.find_element(By.ID, "username")
 
 # Enter Your Email Address
-username.send_keys("212028varenya@staloysius.ac.in")
+username.send_keys("212029wincel@staloysius.ac.in")
+time.sleep(0.5)
 
 # entering password
 pword = driver.find_element(By.ID, "password")
 
 # Enter Your Password
-pword.send_keys("Wincelcheck@23")
+pword.send_keys("Pass@2thisacc")
+time.sleep(0.5)
 
 # Clicking on the log in button
 driver.find_element(By.XPATH, "//button[@type='submit']").click()
@@ -76,8 +77,10 @@ driver.find_element(By.XPATH, "//button[@type='submit']").click()
 
 if selected_profile != "":
     driver.get("https://www."+selected_profile)
+    time.sleep(3)
 else:
     driver.get(profile_url)
+    time.sleep(3)
 
 
 start = time.time()
@@ -133,6 +136,7 @@ def prompt(text):
     return get_completion(prompt)
 
 response = prompt(text)
+st.write(response)
 
 df = pd.DataFrame(eval(response), index=[0])
         
