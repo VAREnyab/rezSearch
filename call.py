@@ -5,17 +5,31 @@ import os
 def database():
     # Connect to MySQL database
     db = mysql.connector.connect(
-        host='127.0.0.1',
-        user='root',
-        password='mysql30',
-        database='resu'
+        host='aws.connect.psdb.cloud',
+        user='2navrj03w1pymyqaxr3u',
+        password='pscale_pw_Y2Ibnd175OXmR9FHvc9SJUNHY8NMA7JDd7I3IFH0rC9',
+        database='resume_parser'
     )
     return db
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 def delete_files():
     if st.button("Are you sure? All resumes will be removed"):
-        folder_path = './Sample Resumes'
+        folder_path = './Resumes'
 
         # Get file names in the folder
         file_names = os.listdir(folder_path)

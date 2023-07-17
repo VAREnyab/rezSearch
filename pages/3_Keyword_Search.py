@@ -6,9 +6,6 @@ import base64
 from call import database
 
 
-# Read in data from Excel file
-data = pd.read_excel("resume_extracted.xlsx")
-
 # Display the pdf
 def display_pdf(pdf_file_path):
     with open(pdf_file_path, 'rb') as file:

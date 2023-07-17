@@ -74,13 +74,13 @@ pdf_file = st.file_uploader("Upload your Resume", type=['pdf'])
 
 # Check if a file is uploaded
 if pdf_file is not None:
-    save_resume_path = './Sample Resumes/' + pdf_file.name
+    save_resume_path = './Resumes/' + pdf_file.name
     with open(save_resume_path, 'wb') as f:
         f.write(pdf_file.getbuffer())
     display_pdf(save_resume_path)
     
     # Path to the folder
-    folder_path = './Sample Resumes'
+    folder_path = './Resumes'
 
     # Get file names in the folder
     file_names = os.listdir(folder_path)
