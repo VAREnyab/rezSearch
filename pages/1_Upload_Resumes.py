@@ -4,10 +4,10 @@ import base64
 import fitz
 import openai
 import os
-from call import database
+from call import database, delete_files
 
-st.set_page_config(page_title="Upload Resumes", page_icon=":guardsman:", layout="wide")
-st.title("Upload Resumes")
+st.set_page_config(page_title="Resumes Upload", page_icon=":guardsman:", layout="wide")
+st.title("Resumes Upload")
 
 # OpeAI API key
 key = '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'
@@ -30,7 +30,7 @@ def get_completion(prompt, model="gpt-3.5-turbo",temperature=0):
     )
     return response.choices[0].message["content"] 
 
-# Create prompt for NER Extraction
+# Create prompt for true resume check
 def true_check(text):
     prompt = f"""
     ```{text}```
@@ -38,6 +38,7 @@ def true_check(text):
     """
     return get_completion(prompt)
 
+# Create prompt for NER Extraction
 def prompt(text):
     prompt = f"""
     ```{text}```
@@ -162,41 +163,6 @@ if pdf_file is not None:
     # Close the cursor and database connection
     cursor.close()
     db.close()
-    
-    
-    if st.button("Done Uploading Resumes?"):
-        st.write("Go to next page")
-        
-  
-        # if st.button("QUIT?"):
-        #     folder_path = './Sample Resumes'
 
-        #     # Get file names in the folder
-        #     file_names = os.listdir(folder_path)
-
-        #     # Iterate over the file names and delete each file
-        #     for file_name in file_names:
-        #         file_path = os.path.join(folder_path, file_name)
-        #         if os.path.isfile(file_path):
-        #             os.remove(file_path)
-                    
-        #     db = database()
-        #     cursor = db.cursor()
-
-        #     cursor.execute("DELETE FROM resume_text")
-        #     cursor.execute("DELETE FROM resume_detail")
-        #     cursor.execute("ALTER TABLE resume_text AUTO_INCREMENT = 1")
-        #     cursor.execute("ALTER TABLE resume_detail AUTO_INCREMENT = 1")
-
-
-        #     cursor.close()
-        #     db.close()
-    
-    
-    
-    
-
-
-
-
-
+# if st.button('QUIT'):
+#     delete_files()

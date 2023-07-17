@@ -10,6 +10,14 @@ from selenium.webdriver.chrome.options import Options
 st.set_page_config(page_title="Job Search", page_icon=":guardsman:", layout="wide")
 st.title("Job Search")
 
+'''
+Welcome to our job search platform, where finding your dream job is made simple and efficient. 
+Our website offers a vast and diverse range of job opportunities from leading companies across 
+various industries. With our user-friendly interface and powerful search tools, you can easily 
+browse through job listings, filter results based on your preferences, and apply with just a 
+few clicks.
+'''
+
 #to use selenium without visual display of window
 Options = Options()
 Options.add_argument('--headless=new')
