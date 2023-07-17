@@ -12,6 +12,9 @@ def database():
     )
     return db
 
+# Initialize an empty list to store the unique IDs
+uploaded_file_ids = []
+
 
 # Function to delete records from the database and files from the folder
 def delete_records_and_files():
@@ -19,15 +22,16 @@ def delete_records_and_files():
         # Database operations
         db = database()
         cursor = db.cursor()
+        
+        if uploaded_file_ids:
+            cursor.execute("DELETE FROM resume_text WHERE unique_id IN ({})".format(','.join(['%s'] * len(uploaded_file_ids))),tuple(uploaded_file_ids))
+            cursor.execute("DELETE FROM resume_detail WHERE unique_id IN ({})".format(','.join(['%s'] * len(uploaded_file_ids))),tuple(uploaded_file_ids))
+            cursor.execute("DELETE FROM resume_keyword WHERE unique_id IN ({})".format(','.join(['%s'] * len(uploaded_file_ids))),tuple(uploaded_file_ids))
 
-        cursor.execute("DELETE FROM resume_text")
-        cursor.execute("DELETE FROM resume_detail")
-        cursor.execute("DELETE FROM resume_keyword")
-
-        cursor.execute("ALTER TABLE resume_text AUTO_INCREMENT = 1")
-        cursor.execute("ALTER TABLE resume_detail AUTO_INCREMENT = 1")
-        cursor.execute("ALTER TABLE resume_keyword AUTO_INCREMENT = 1")
-
+            # cursor.execute("ALTER TABLE resume_text AUTO_INCREMENT = 1")
+            # cursor.execute("ALTER TABLE resume_detail AUTO_INCREMENT = 1")
+            # cursor.execute("ALTER TABLE resume_keyword AUTO_INCREMENT = 1")
+        
         db.commit()
 
         cursor.close()

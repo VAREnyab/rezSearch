@@ -4,7 +4,8 @@ import base64
 import fitz
 import openai
 import os
-from call import database
+import uuid
+from call import database, uploaded_file_ids
 
 st.set_page_config(page_title="Resumes Upload", page_icon=":guardsman:", layout="wide")
 st.title("Resumes Upload")
@@ -69,11 +70,22 @@ def prompt(text):
     """
     return get_completion(prompt)
 
+def generate_unique_id():
+    # Generate a new UUID (version 4, random-based)
+    return str(uuid.uuid4())
+
+
 pdf_file = st.file_uploader("Upload your Resume", type=['pdf'])
 
 
 # Check if a file is uploaded
 if pdf_file is not None:
+    
+    # Generate a unique ID and store it in the list
+    unique_id = generate_unique_id()
+    uploaded_file_ids.append(unique_id)
+    
+    # Saving pdfs
     save_resume_path = './Resumes/' + pdf_file.name
     with open(save_resume_path, 'wb') as f:
         f.write(pdf_file.getbuffer())
@@ -136,18 +148,18 @@ if pdf_file is not None:
     else:
         # Insert the extracted text into the database
         # Insert in table name resume_text
-        insert_query = "INSERT INTO resume_text (text) VALUES (%s)"
-        cursor.execute(insert_query, (text,))
+        insert_query = "INSERT INTO resume_text (text, unique_id) VALUES (%s, %s)"
+        cursor.execute(insert_query, (text, unique_id))
         db.commit()
         
         # Insert in table name resume_details
         for index, row in df.iterrows():
-            insert_query = "INSERT INTO resume_detail (name, email, phone_number, linkedin_id, skills, tools, experience, college_name, referrals_name, referrals_phone_number, referrals_email, location, companies_worked_at, designation) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+            insert_query = "INSERT INTO resume_detail (name, email, phone_number, linkedin_id, skills, tools, experience, college_name, referrals_name, referrals_phone_number, referrals_email, location, companies_worked_at, designation, unique_id) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
             cursor.execute(insert_query, (row['Name'], row['Email ID'], row['Phone number'], 
                                         row['LinkedIn ID'], row['Skills'], row['Tools'], 
                                         row['Experience'], row['College name'], row['Referrals name'], 
                                         row['Referrals phone number'], row['Referrals email'], row['Location'], 
-                                        row['Companies worked at'], row['Designation']))
+                                        row['Companies worked at'], row['Designation'], unique_id))
             db.commit()
             
         # Insert in table name resume_keyword
@@ -156,8 +168,8 @@ if pdf_file is not None:
             keyword = row['Keywords']
             
             # Insert the values into the table
-            insert_query = "INSERT INTO resume_keyword (filename, text, keyword) VALUES (%s, %s, %s)"
-            cursor.execute(insert_query, (save_resume_path, text, keyword))
+            insert_query = "INSERT INTO resume_keyword (filename, text, keyword, unique_id) VALUES (%s, %s, %s, %s)"
+            cursor.execute(insert_query, (save_resume_path, text, keyword, unique_id))
             db.commit()
 
     # Close the cursor and database connection
