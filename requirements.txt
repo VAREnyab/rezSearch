@@ -3,3 +3,4 @@ pandasai
 beautifulsoup4
 fuzzywuzzy
 mysql-connector-python
+selenium

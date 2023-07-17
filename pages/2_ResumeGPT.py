@@ -13,7 +13,6 @@ key_pandas = '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'
 llm = OpenAI(api_token=key_pandas)
 pandas_ai = PandasAI(llm)
 
-
 db = database()
 cursor = db.cursor()
 # Execute the SQL query
