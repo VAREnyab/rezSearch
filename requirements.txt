@@ -1,4 +1,4 @@
-fitz
+PyMuPDF
 pandasai
 beautifulsoup4
 fuzzywuzzy
