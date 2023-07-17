@@ -2,3 +2,4 @@ PyMuPDF
 pandasai
 beautifulsoup4
 fuzzywuzzy
+mysql-connector-python
