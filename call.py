@@ -13,33 +13,10 @@ def database():
     return db
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-def delete_files():
-    if st.button("Are you sure? All resumes will be removed"):
-        folder_path = './Resumes'
-
-        # Get file names in the folder
-        file_names = os.listdir(folder_path)
-
-        # Iterate over the file names and delete each file
-        for file_name in file_names:
-            file_path = os.path.join(folder_path, file_name)
-            if os.path.isfile(file_path):
-                os.remove(file_path)
-                
+# Function to delete records from the database and files from the folder
+def delete_records_and_files():
+    try:
+        # Database operations
         db = database()
         cursor = db.cursor()
 
@@ -51,5 +28,27 @@ def delete_files():
         cursor.execute("ALTER TABLE resume_detail AUTO_INCREMENT = 1")
         cursor.execute("ALTER TABLE resume_keyword AUTO_INCREMENT = 1")
 
+        db.commit()
+
         cursor.close()
         db.close()
+
+        # Folder path for file deletion
+        folder_path = './Resumes'
+
+        # Get file names in the folder
+        file_names = os.listdir(folder_path)
+
+        # Iterate over the file names and delete each file
+        for file_name in file_names:
+            file_path = os.path.join(folder_path, file_name)
+            if os.path.isfile(file_path):
+                os.remove(file_path)
+                # st.write(f"Deleted file: {file_name}")
+
+        st.sidebar.text("Database records and files deleted successfully.")
+
+    except Exception as e:
+        st.error(f"An error occurred: {e}")
+            
+            

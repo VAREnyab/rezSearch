@@ -1,4 +1,5 @@
 import streamlit as st
+from call import database, delete_records_and_files
 
 st.set_page_config(
     page_title="Mulitpage App",
@@ -18,3 +19,6 @@ These tools save time and effort by eliminating the need for manual data entry a
 based on their qualifications and fit for specific roles.
 
 '''
+
+if st.sidebar.button('Do you want to quit?'):
+    delete_records_and_files()

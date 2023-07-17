@@ -4,7 +4,7 @@ import base64
 import fitz
 import openai
 import os
-from call import database, delete_files
+from call import database
 
 st.set_page_config(page_title="Resumes Upload", page_icon=":guardsman:", layout="wide")
 st.title("Resumes Upload")
@@ -164,5 +164,3 @@ if pdf_file is not None:
     cursor.close()
     db.close()
 
-# if st.button('QUIT'):
-#     delete_files()
