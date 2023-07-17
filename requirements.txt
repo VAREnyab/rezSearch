@@ -1,0 +1,4 @@
+fitz
+pandasai
+beautifulsoup4
+fuzzywuzzy
