@@ -1,5 +1,5 @@
 import streamlit as st
-from call import database, delete_records_and_files
+from call import delete_records_and_files
 
 st.set_page_config(
     page_title="Mulitpage App",
@@ -8,6 +8,9 @@ st.set_page_config(
 
 st.title("RESUME PARSER")
 st.sidebar.success("Select a page above")
+
+if st.sidebar.button('Quit?'):
+    delete_records_and_files()
 
 '''
 A resume parser is a software tool that automates the extraction and analysis of information from resumes or CVs (Curriculum Vitae). 
@@ -19,6 +22,3 @@ These tools save time and effort by eliminating the need for manual data entry a
 based on their qualifications and fit for specific roles.
 
 '''
-
-if st.sidebar.button('Do you want to quit?'):
-    delete_records_and_files()
