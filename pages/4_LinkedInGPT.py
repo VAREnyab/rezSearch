@@ -46,11 +46,13 @@ st.text("OR")
 profile_url = st.text_input("Enter the profile URL", "")
 
 # Creating a webdriver instance
-Options = Options()
-Options.add_argument('--headless=new')
-driver = webdriver.Chrome(options=Options)
-# driver = webdriver.Chrome()
+chrome_options = Options()
+chrome_options.add_argument('--headless')
 
+selenium_path = "C:\Program Files (x86)\Google\Chrome\Application\chromedriver.exe"
+
+driver = webdriver.Chrome(executable_path=selenium_path, options=chrome_options)
+# driver = webdriver.Chrome()
 
 # Opening linkedIn's login page
 driver.get("https://linkedin.com/uas/login")
