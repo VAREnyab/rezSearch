@@ -4,3 +4,4 @@ beautifulsoup4
 fuzzywuzzy
 mysql-connector-python
 selenium
+webdriver_manager
