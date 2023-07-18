@@ -19,10 +19,9 @@ browse through job listings, filter results based on your preferences, and apply
 few clicks.
 '''
 
-
 # Creating a webdriver instance
 chrome_options = Options()
-chrome_options.add_argument('--headless')
+chrome_options.add_argument('--headless=new')
 
 browser = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
 
@@ -41,7 +40,7 @@ if query != "":
     words_jobs = set(job_filter_list)
     descriptions_jobs = words_jobs
 
-    selected_options_jobs = st.multiselect('Select Job Options', descriptions_jobs)
+    selected_options_jobs = st.sidebar.multiselect('Select Job Options', descriptions_jobs)
 
     #location filter
     location_filter=page.find_all('div',{"data-facet":"city","class":"eNr05b GbaVB ZkkK1e yUTMj k1U36b"})
@@ -52,7 +51,7 @@ if query != "":
     words_loc = location_filter_name
     descriptions_loc = words_loc
     
-    selected_options_loc = st.multiselect('Select Location', descriptions_loc)
+    selected_options_loc = st.sidebar.multiselect('Select Location', descriptions_loc)
     
     #employment type filter
     type_filter=page.find_all('div',{'data-facet':"employment_type","class":"eNr05b GbaVB ZkkK1e yUTMj k1U36b"})
@@ -61,7 +60,7 @@ if query != "":
     words_type = set(type_filter_list)
     descriptions_type = words_type
     
-    selected_options_type = st.multiselect('Select the type of the job', descriptions_type)
+    selected_options_type = st.sidebar.multiselect('Select the type of the job', descriptions_type)
 
     # Find all date posted
     job_dates = page.find_all("div", {"data-facet":"date_posted","class":"eNr05b GbaVB ZkkK1e yUTMj k1U36b"})
@@ -69,7 +68,7 @@ if query != "":
     # Extract dates posted
     job_date_list = [job_date['data-name'] for job_date in job_dates if not job_date['data-value']=="__placeholder__"]
     
-    selected_options_date = st.radio('Select a date', job_date_list)
+    selected_options_date = st.sidebar.radio('Select a date', job_date_list)
 
     #org filter
     org_filter=page.find_all('div',{'data-facet':"organization_mid","class":"eNr05b GbaVB ZkkK1e yUTMj k1U36b"})
@@ -78,7 +77,7 @@ if query != "":
     words_org = set(org_filter_name)
     descriptions_org = words_org
     
-    selected_options_org = st.multiselect('Select the organisation', descriptions_org)
+    selected_options_org = st.sidebar.multiselect('Select the organisation', descriptions_org)
 
     #Industry filter
     ind_filter=page.find_all('div',{'data-facet':"industry.id","class":"eNr05b GbaVB ZkkK1e yUTMj k1U36b"})
@@ -87,7 +86,7 @@ if query != "":
     words_ind = set(ind_filter_name)
     descriptions_ind = words_ind
     
-    selected_options_ind = st.multiselect('Select the organisation', descriptions_ind)
+    selected_options_ind = st.sidebar.multiselect('Select the organisation', descriptions_ind)
 
     filters='htichips='
     for i in selected_options_jobs:

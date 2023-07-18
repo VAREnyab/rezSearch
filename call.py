@@ -50,7 +50,7 @@ def delete_records_and_files():
                 os.remove(file_path)
                 # st.write(f"Deleted file: {file_name}")
 
-        st.sidebar.text("Database records and files deleted successfully.")
+        st.sidebar.write("Database records and files deleted successfully.")
 
     except Exception as e:
         st.error(f"An error occurred: {e}")
