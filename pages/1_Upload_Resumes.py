@@ -53,14 +53,15 @@ def prompt(text):
     5. Skills ( eg, programming, marketing)
     6. Tools  ( Linux, ms, python, java)
     7. Experience 
-    8. College name
-    9. Referrals name
-    10. Referrals phone number
-    11. Referrals email
-    12. Location
-    13. Companies worked at
-    14. Designation 
-    15. Keywords (give all technical skills, separated by commas (e.g., C, C++, Python, Java, programming etc))
+    8. Project name
+    9. College name
+    10. Referrals name
+    11. Referrals phone number
+    12. Referrals email
+    13. Location
+    14. Companies worked at
+    15. Designation 
+    16. Keywords (give all technical skills, separated by commas (e.g., C, C++, Python, Java, programming etc))
     
 
     Seperate the details with :
@@ -154,10 +155,10 @@ if pdf_file is not None:
         
         # Insert in table name resume_details
         for index, row in df.iterrows():
-            insert_query = "INSERT INTO resume_detail (name, email, phone_number, linkedin_id, skills, tools, experience, college_name, referrals_name, referrals_phone_number, referrals_email, location, companies_worked_at, designation, unique_id) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+            insert_query = "INSERT INTO resume_detail (name, email, phone_number, linkedin_id, skills, tools, experience, project, college_name, referrals_name, referrals_phone_number, referrals_email, location, companies_worked_at, designation, unique_id) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
             cursor.execute(insert_query, (row['Name'], row['Email ID'], row['Phone number'], 
                                         row['LinkedIn ID'], row['Skills'], row['Tools'], 
-                                        row['Experience'], row['College name'], row['Referrals name'], 
+                                        row['Experience'], row['Project name'], row['College name'], row['Referrals name'], 
                                         row['Referrals phone number'], row['Referrals email'], row['Location'], 
                                         row['Companies worked at'], row['Designation'], unique_id))
             db.commit()

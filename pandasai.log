@@ -359,3 +359,157 @@ df[df['name'] == 'SHRAVYA']
 2023-07-18 04:48:49 [INFO] error_code=rate_limit_exceeded error_message='Rate limit reached for default-gpt-3.5-turbo in organization org-EPYsHAyT6F430642DVSSLwEX on requests per min. Limit: 3 / min. Please try again in 20s. Contact us through our help center at help.openai.com if you continue to have issues. Please add a payment method to your account to increase your rate limit. Visit https://platform.openai.com/account/billing to add a payment method.' error_param=None error_type=requests message='OpenAI API error received' stream_error=False
 2023-07-18 04:50:12 [INFO] Applicable driver not found; attempting to install with Selenium Manager (Beta)
 2023-07-18 04:50:16 [INFO] Applicable driver not found; attempting to install with Selenium Manager (Beta)
+2023-07-18 18:02:03 [INFO] Question: Who has skills Python
+
+2023-07-18 18:02:03 [INFO] Running PandasAI with openai LLM...
+2023-07-18 18:02:03 [INFO] Prompt ID: cddda6d3-902d-4341-8287-e050135cdbd4
+2023-07-18 18:02:15 [INFO] Question: Who has skill Python
+
+2023-07-18 18:02:15 [INFO] Running PandasAI with openai LLM...
+2023-07-18 18:02:16 [INFO] Prompt ID: ed5281f7-aae4-4927-9b66-cd17ef6afe6e
+2023-07-18 18:02:40 [INFO] Question: Give summary of the data
+
+
+2023-07-18 18:02:40 [INFO] Running PandasAI with openai LLM...
+2023-07-18 18:02:40 [INFO] Prompt ID: 7aff4215-aec8-43d2-81c2-20fa7278d773
+2023-07-18 18:02:46 [INFO] Question: Give a summary of the data
+
+
+2023-07-18 18:02:46 [INFO] Running PandasAI with openai LLM...
+2023-07-18 18:02:46 [INFO] Prompt ID: 4ff97cef-1287-48e5-abe0-5162313665e0
+2023-07-18 18:03:47 [INFO] Question: give details of those who have tools Tableau
+
+2023-07-18 18:03:47 [INFO] Running PandasAI with openai LLM...
+2023-07-18 18:03:47 [INFO] Prompt ID: bc2bd411-cc5c-4c39-aba6-dfc8a0093514
+2023-07-18 18:06:46 [INFO] Question: display the dataset
+
+
+2023-07-18 18:06:46 [INFO] Running PandasAI with openai LLM...
+2023-07-18 18:06:46 [INFO] Prompt ID: c5d539d9-1e7b-44a8-99e9-a6128fc4ee34
+2023-07-18 18:09:05 [INFO] Question: give details of name K APARNA
+
+2023-07-18 18:09:05 [INFO] Running PandasAI with openai LLM...
+2023-07-18 18:09:05 [INFO] Prompt ID: a0fe8834-d7fa-45e9-8206-42f692da2ad9
+2023-07-18 18:09:07 [INFO] 
+                        Code generated:
+                        ```
+                        df[df['name'] == 'K APARNA']
+                        ```
+                    
+2023-07-18 18:09:07 [INFO] 
+Code running:
+```
+df[df['name'] == 'K APARNA']
+```
+2023-07-18 18:09:07 [INFO] Answer:    id      name                 email  ... designation                             unique_id                                            project
+1  12  K APARNA  aparnak743@gmail.com  ...         Nan  5919b961-079d-4902-94e8-03537b083b1b  Gym Management System, Budget Manager-Android ...
+
+[1 rows x 17 columns]
+2023-07-18 18:09:07 [INFO] Executed in: 2.4903481006622314s
+2023-07-18 18:09:35 [INFO] Question: give details of those whose skills are C
+
+
+2023-07-18 18:09:35 [INFO] Running PandasAI with openai LLM...
+2023-07-18 18:09:35 [INFO] Prompt ID: 00365067-c89a-4775-b5e7-c5a3c1f9b437
+2023-07-18 18:09:46 [WARNING] Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000244FB52C1F0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed')': /v1/chat/completions
+2023-07-18 18:09:47 [INFO] 
+                        Code generated:
+                        ```
+                        df[df['skills'].str.contains('C')]
+                        ```
+                    
+2023-07-18 18:09:47 [INFO] 
+Code running:
+```
+df[df['skills'].str.contains('C')]
+```
+2023-07-18 18:09:47 [INFO] Answer:    id            name                 email  ... designation                             unique_id                                            project
+0  11  Lily Bangalore     Lily123@gmail.com  ...         Nan  305c6a05-c4f0-41e2-a6ee-f2bf49d9e5d7                                                Nan
+1  12        K APARNA  aparnak743@gmail.com  ...         Nan  5919b961-079d-4902-94e8-03537b083b1b  Gym Management System, Budget Manager-Android ...
+
+[2 rows x 17 columns]
+2023-07-18 18:09:47 [INFO] Executed in: 12.248631477355957s
+2023-07-18 18:11:17 [INFO] Question: Give summary of the data
+
+2023-07-18 18:11:17 [INFO] Running PandasAI with openai LLM...
+2023-07-18 18:11:17 [INFO] Prompt ID: 45505ca6-3faa-4ab7-860e-27faa3e1ca38
+2023-07-18 18:11:18 [INFO] 
+                        Code generated:
+                        ```
+                        df.info()
+                        ```
+                    
+2023-07-18 18:11:18 [INFO] 
+Code running:
+```
+df.info()
+```
+2023-07-18 18:11:18 [INFO] Answer: None
+2023-07-18 18:11:18 [INFO] Executed in: 1.1021888256072998s
+2023-07-18 18:14:28 [INFO] Question: Give summary of the data
+
+2023-07-18 18:14:28 [INFO] Running PandasAI with openai LLM...
+2023-07-18 18:14:28 [INFO] Prompt ID: 87d8b3ce-e058-4d0e-9900-4b8019c24f43
+2023-07-18 18:14:28 [INFO] Using cached response
+2023-07-18 18:14:28 [INFO] 
+Code running:
+```
+df.info()
+```
+2023-07-18 18:14:28 [INFO] Answer: None
+2023-07-18 18:14:28 [INFO] Executed in: 0.07013273239135742s
+2023-07-18 18:14:50 [INFO] Question: Give skills Python
+
+
+2023-07-18 18:14:50 [INFO] Running PandasAI with openai LLM...
+2023-07-18 18:14:50 [INFO] Prompt ID: baf8a054-62b0-4800-8352-374ef832595b
+2023-07-18 18:15:34 [INFO] Question: Give summary of the data
+
+2023-07-18 18:15:34 [INFO] Running PandasAI with openai LLM...
+2023-07-18 18:15:34 [INFO] Prompt ID: f08b842e-ba5d-4f5e-b784-ce651ad9624e
+2023-07-18 18:15:34 [INFO] Using cached response
+2023-07-18 18:15:34 [INFO] 
+Code running:
+```
+df.info()
+```
+2023-07-18 18:15:34 [INFO] Answer: None
+2023-07-18 18:15:34 [INFO] Executed in: 0.023953676223754883s
+2023-07-18 18:15:44 [INFO] Question: Give a summary of the data
+
+2023-07-18 18:15:44 [INFO] Running PandasAI with openai LLM...
+2023-07-18 18:15:44 [INFO] Prompt ID: 942d1c8f-0c26-4fe9-ab4b-572f29ed4907
+2023-07-18 18:15:45 [INFO] 
+                        Code generated:
+                        ```
+                        df.info()
+                        ```
+                    
+2023-07-18 18:15:45 [INFO] 
+Code running:
+```
+df.info()
+```
+2023-07-18 18:15:45 [INFO] Answer: None
+2023-07-18 18:15:45 [INFO] Executed in: 1.0315942764282227s
+2023-07-18 18:15:59 [INFO] Question: Give the details of K APARNA
+
+
+2023-07-18 18:15:59 [INFO] Running PandasAI with openai LLM...
+2023-07-18 18:15:59 [INFO] Prompt ID: 605a1139-c759-40e7-839d-78b957af1bcb
+2023-07-18 18:16:01 [INFO] 
+                        Code generated:
+                        ```
+                        df[df['name'] == 'K APARNA']
+                        ```
+                    
+2023-07-18 18:16:01 [INFO] 
+Code running:
+```
+df[df['name'] == 'K APARNA']
+```
+2023-07-18 18:16:01 [INFO] Answer:    id  ...                                            project
+1   2  ...  Gym Management System, Budget Manager-Android ...
+
+[1 rows x 17 columns]
+2023-07-18 18:16:01 [INFO] Executed in: 1.3382697105407715s

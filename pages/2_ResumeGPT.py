@@ -8,6 +8,13 @@ from call import database, uploaded_file_ids
 st.set_page_config(page_title="ResumeGPT", page_icon=":guardsman:", layout="wide")
 st.title("ResumeGPT")
 
+'''
+Welcome to ResumeGPT, your one-stop destination for insightful conversations and 
+comprehensive information about your candidates. Engage in real-time chat with our 
+intelligent platform to uncover valuable details and gain deeper insights into 
+each candidate's qualifications, experience, and skills.
+'''
+
 key_pandas = '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'
 
 # Instantiate a LLM
@@ -33,10 +40,10 @@ if uploaded_file_ids:
     # Convert data to a dataframe
     df = pd.DataFrame(data, columns=columns)
 
-    st.dataframe(df)
+    # st.dataframe(df)
 
     # Prompt the user for columns to display
-    prompt_from_user = st.text_area("Enter your prompt: ")
+    prompt_from_user = st.text_area("Send a message: ")
 
     if st.button("Generate:"):
         if prompt_from_user:

@@ -5,6 +5,13 @@ from fuzzywuzzy import fuzz
 import base64
 from call import database, uploaded_file_ids
 
+st.set_page_config(page_title="Resume Search Engine", page_icon=":guardsman:", layout="wide")
+st.title("Resume Search Engine")
+'''
+Welcome to our Resume Search Engine, your ultimate solution for quick and efficient keyword-based 
+resume exploration. With our intuitive platform, you have the power to type any keyword, and instantly, 
+all resumes from our extensive database will be displayed, highlighting the most relevant matches.
+'''
 
 # Display the pdf
 def display_pdf(pdf_file_path):
@@ -62,8 +69,6 @@ if uploaded_file_ids:
         ranked_dict = dict(sorted(score_dict.items(), key=lambda item: item[1], reverse=True))
         
         return ranked_dict
-
-    st.title("Resume Search Engine")
 
     # Create search box and button
     search_word = st.text_input("Enter search term:", "")

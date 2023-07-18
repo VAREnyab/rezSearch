@@ -13,6 +13,14 @@ from webdriver_manager.chrome import ChromeDriverManager
 st.set_page_config(page_title="LinkedInGPT", page_icon=":guardsman:", layout="wide")
 st.title("LinkedInGPT")
 
+'''
+Welcome to our LinkedInGPT, a powerful tool designed to enhance your 
+recruitment process by providing deeper insights into potential candidates. 
+With our platform, you can now effortlessly access comprehensive information 
+about your recruitees, from their professional backgrounds and skills to their 
+career achievements and endorsements.
+'''
+
 key = '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'
 openai.api_key = key
 
@@ -139,7 +147,7 @@ def prompt(text):
 response = prompt(text)
 st.write(response)
 
-df = pd.DataFrame(eval(response), index=[0])
+# df = pd.DataFrame(eval(response), index=[0])
         
-st.dataframe(eval(response))
+# st.dataframe(eval(response))
 driver.close()
