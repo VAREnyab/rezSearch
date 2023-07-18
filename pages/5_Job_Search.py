@@ -25,7 +25,7 @@ chrome_options = Options()
 chrome_options.add_argument('--headless=new')
 chrome_options.add_argument('--disable-gpu')
 
-driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
+browser = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
 
 #query search on google jobs site with location mentioned
 query = st.text_input("What jobs are you looking for: ")
