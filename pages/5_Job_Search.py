@@ -6,6 +6,7 @@ import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
+from webdriver_manager.chrome import ChromeDriverManager
 
 st.set_page_config(page_title="Job Search", page_icon=":guardsman:", layout="wide")
 st.title("Job Search")
@@ -26,7 +27,7 @@ Options.add_argument('--headless=new')
 #to use selenium without visual display of window
 selenium_path = "C:\Program Files (x86)\Google\Chrome\Application\chromedriver.exe"
 
-browser = webdriver.Chrome(executable_path=selenium_path, options=Options)
+driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
 
 #query search on google jobs site with location mentioned
 query = st.text_input("What jobs are you looking for: ")

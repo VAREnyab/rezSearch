@@ -6,6 +6,7 @@ import time
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
+from webdriver_manager.chrome import ChromeDriverManager
 
 from call import database
 import openai
@@ -51,7 +52,7 @@ chrome_options.add_argument('--headless')
 
 selenium_path = "C:\Program Files (x86)\Google\Chrome\Application\chromedriver.exe"
 
-driver = webdriver.Chrome(executable_path=selenium_path, options=chrome_options)
+driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
 # driver = webdriver.Chrome()
 
 # Opening linkedIn's login page
