@@ -23,7 +23,6 @@ few clicks.
 # Creating a webdriver instance
 chrome_options = Options()
 chrome_options.add_argument('--headless=new')
-chrome_options.add_argument('--disable-gpu')
 
 browser = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
 

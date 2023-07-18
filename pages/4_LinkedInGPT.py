@@ -48,7 +48,6 @@ profile_url = st.text_input("Enter the profile URL", "")
 # Creating a webdriver instance
 chrome_options = Options()
 chrome_options.add_argument('--headless')
-chrome_options.add_argument('--disable-gpu')
 
 driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
 # driver = webdriver.Chrome()
