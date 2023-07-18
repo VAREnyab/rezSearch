@@ -176,4 +176,3 @@ if pdf_file is not None:
     # Close the cursor and database connection
     cursor.close()
     db.close()
-

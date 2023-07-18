@@ -46,7 +46,7 @@ def delete_records_and_files():
         # Iterate over the file names and delete each file
         for file_name in file_names:
             file_path = os.path.join(folder_path, file_name)
-            if os.path.isfile(file_path):
+            if os.path.isfile(file_path) and file_name != ".gitkeep":
                 os.remove(file_path)
                 # st.write(f"Deleted file: {file_name}")
 
