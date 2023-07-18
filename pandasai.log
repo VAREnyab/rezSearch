@@ -513,3 +513,31 @@ df[df['name'] == 'K APARNA']
 
 [1 rows x 17 columns]
 2023-07-18 18:16:01 [INFO] Executed in: 1.3382697105407715s
+2023-07-18 18:16:26 [INFO] Question: Give the details of Lily
+
+
+
+2023-07-18 18:16:26 [INFO] Running PandasAI with openai LLM...
+2023-07-18 18:16:26 [INFO] Prompt ID: 406f8eca-9ab6-4a78-b469-2a1a1d926a37
+2023-07-18 18:16:27 [INFO] 
+                        Code generated:
+                        ```
+                        df[df['name'] == 'Lily Bangalore']
+                        ```
+                    
+2023-07-18 18:16:27 [INFO] 
+Code running:
+```
+df[df['name'] == 'Lily Bangalore']
+```
+2023-07-18 18:16:27 [INFO] Answer:    id  ... project
+0   1  ...     Nan
+
+[1 rows x 17 columns]
+2023-07-18 18:16:27 [INFO] Executed in: 1.391937255859375s
+2023-07-18 18:18:26 [INFO] ====== WebDriver manager ======
+2023-07-18 18:18:31 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-18 18:19:23 [INFO] ====== WebDriver manager ======
+2023-07-18 18:19:24 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-18 18:23:53 [INFO] ====== WebDriver manager ======
+2023-07-18 18:23:54 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
