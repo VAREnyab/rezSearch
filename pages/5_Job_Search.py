@@ -21,13 +21,13 @@ few clicks.
 
 
 # Creating a webdriver instance
-Options = Options()
-Options.add_argument('--headless=new')
+chrome_options = Options()
+chrome_options.add_argument('--headless=new')
 
 #to use selenium without visual display of window
 selenium_path = "C:\Program Files (x86)\Google\Chrome\Application\chromedriver.exe"
 
-driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
+driver = webdriver.Chrome(executable_path=ChromeDriverManager().install(), options=chrome_options)
 
 #query search on google jobs site with location mentioned
 query = st.text_input("What jobs are you looking for: ")

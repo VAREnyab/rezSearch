@@ -52,7 +52,7 @@ chrome_options.add_argument('--headless')
 
 selenium_path = "C:\Program Files (x86)\Google\Chrome\Application\chromedriver.exe"
 
-driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
+driver = webdriver.Chrome(executable_path=ChromeDriverManager().install(), options=chrome_options)
 # driver = webdriver.Chrome()
 
 # Opening linkedIn's login page
