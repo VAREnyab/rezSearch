@@ -2,14 +2,13 @@ import pandas as pd
 from bs4 import BeautifulSoup
 import streamlit as st
 import time
+from call import database
+import openai
 
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
-
-from call import database
-import openai
 
 st.set_page_config(page_title="LinkedInGPT", page_icon=":guardsman:", layout="wide")
 st.title("LinkedInGPT")
@@ -49,10 +48,9 @@ profile_url = st.text_input("Enter the profile URL", "")
 # Creating a webdriver instance
 chrome_options = Options()
 chrome_options.add_argument('--headless')
+chrome_options.add_argument('--disable-gpu')
 
-selenium_path = "C:\Program Files (x86)\Google\Chrome\Application\chromedriver.exe"
-
-driver = webdriver.Chrome(executable_path=ChromeDriverManager().install(), options=chrome_options)
+driver = webdriver.Chrome(ChromeDriverManager().install(), options=chrome_options)
 # driver = webdriver.Chrome()
 
 # Opening linkedIn's login page
