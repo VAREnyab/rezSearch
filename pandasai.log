@@ -1,543 +1,242 @@
-2023-07-07 14:29:25 [INFO] Question: remove duplicates
-2023-07-07 14:29:25 [INFO] Running PandasAI with openai LLM...
-2023-07-07 14:29:25 [INFO] Prompt ID: 6c35c016-a7f5-4544-ab9d-dd77506b6686
-2023-07-07 14:30:21 [INFO] Question: give the length of the dataset
+2023-07-19 11:16:01 [INFO] Question: Give the number of rows and columns
 
-2023-07-07 14:30:21 [INFO] Running PandasAI with openai LLM...
-2023-07-07 14:30:21 [INFO] Prompt ID: cca328e3-9849-4a6c-9d80-2e5250017a5a
-2023-07-08 10:58:37 [INFO] Question: Give me the details of skills Java
-
-2023-07-08 10:58:37 [INFO] Running PandasAI with openai LLM...
-2023-07-08 10:58:37 [INFO] Prompt ID: 71f5255f-57bc-455f-b49e-c7358f98de77
-2023-07-08 11:02:14 [INFO] Question: Give the length of the data
-
-2023-07-08 11:02:14 [INFO] Running PandasAI with openai LLM...
-2023-07-08 11:02:14 [INFO] Prompt ID: f094a96d-7cc8-4f9a-a94f-7fb6420e9240
-2023-07-08 11:02:16 [INFO] 
+2023-07-19 11:16:01 [INFO] Running PandasAI with openai LLM...
+2023-07-19 11:16:01 [INFO] Prompt ID: 5c279e43-8382-4e78-a3e0-dc417a049960
+2023-07-19 11:16:04 [INFO] 
                         Code generated:
                         ```
-                        length = len(df)
-print(length)
+                        rows, columns = df.shape
+print("Number of rows:", rows)
+print("Number of columns:", columns)
                         ```
                     
-2023-07-08 11:02:16 [INFO] 
+2023-07-19 11:16:04 [INFO] 
 Code running:
 ```
-length = len(df)
-print(length)
+rows, columns = df.shape
+print('Number of rows:', rows)
+print('Number of columns:', columns)
 ```
-2023-07-08 11:02:16 [INFO] Answer: 3
-2023-07-08 11:02:16 [INFO] Executed in: 1.7034661769866943s
-2023-07-08 11:02:32 [INFO] Question: Give all the details of skills containing C
+2023-07-19 11:16:04 [INFO] Answer: Number of rows: 7
+Number of columns: 17
+2023-07-19 11:16:04 [INFO] Executed in: 2.6589133739471436s
+2023-07-19 12:21:52 [INFO] ====== WebDriver manager ======
+2023-07-19 12:21:55 [INFO] Get LATEST chromedriver version for google-chrome
+2023-07-19 12:21:55 [INFO] About to download new driver from https://chromedriver.storage.googleapis.com/114.0.5735.90/chromedriver_win32.zip
+2023-07-19 12:21:57 [INFO] Driver has been saved in cache [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90]
+2023-07-19 12:22:20 [INFO] ====== WebDriver manager ======
+2023-07-19 12:22:21 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-19 12:22:46 [INFO] ====== WebDriver manager ======
+2023-07-19 12:22:46 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-19 12:29:42 [INFO] ====== WebDriver manager ======
+2023-07-19 12:29:43 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-19 12:30:38 [INFO] ====== WebDriver manager ======
+2023-07-19 12:30:39 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-19 12:30:48 [INFO] ====== WebDriver manager ======
+2023-07-19 12:30:49 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-19 12:35:22 [INFO] ====== WebDriver manager ======
+2023-07-19 12:35:22 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-19 12:35:37 [INFO] ====== WebDriver manager ======
+2023-07-19 12:35:38 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-19 12:35:49 [INFO] ====== WebDriver manager ======
+2023-07-19 12:35:51 [INFO] ====== WebDriver manager ======
+2023-07-19 12:35:51 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-19 12:35:54 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-19 12:35:54 [INFO] ====== WebDriver manager ======
+2023-07-19 12:35:57 [INFO] ====== WebDriver manager ======
+2023-07-19 12:35:58 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-19 12:35:59 [INFO] ====== WebDriver manager ======
+2023-07-19 12:36:01 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-19 12:36:02 [INFO] ====== WebDriver manager ======
+2023-07-19 12:36:07 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-19 12:36:11 [INFO] ====== WebDriver manager ======
+2023-07-19 12:36:18 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-19 12:36:21 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-19 12:40:03 [INFO] ====== WebDriver manager ======
+2023-07-19 12:40:04 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-19 12:49:50 [INFO] ====== WebDriver manager ======
+2023-07-19 12:50:03 [INFO] ====== WebDriver manager ======
+2023-07-19 12:50:14 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-19 12:50:14 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-19 12:50:18 [INFO] ====== WebDriver manager ======
+2023-07-19 12:50:29 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-19 12:51:43 [INFO] ====== WebDriver manager ======
+2023-07-19 12:51:46 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-19 12:52:15 [INFO] ====== WebDriver manager ======
+2023-07-19 12:52:22 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-19 12:52:25 [INFO] ====== WebDriver manager ======
+2023-07-19 12:52:30 [INFO] ====== WebDriver manager ======
+2023-07-19 12:52:44 [INFO] ====== WebDriver manager ======
+2023-07-19 12:54:10 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-19 12:54:10 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-19 12:54:24 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-19 13:52:04 [INFO] Question: give the details of the data
 
-2023-07-08 11:02:32 [INFO] Running PandasAI with openai LLM...
-2023-07-08 11:02:32 [INFO] Prompt ID: 1ece9224-d750-4525-b49e-a7e78c0ae295
-2023-07-08 11:02:35 [INFO] 
-                        Code generated:
-                        ```
-                        df[df['skills'].str.contains('C')]
-                        ```
-                    
-2023-07-08 11:02:35 [INFO] 
-Code running:
-```
-df[df['skills'].str.contains('C')]
-```
-2023-07-08 11:02:35 [INFO] Answer:    id          name                            email   phone_number  ...                                   referrals_email   location companies_worked_at designation
-0  68       SHRAVYA  2117106shravya@staloysius.ac.in  +916361229641  ...  santhoshb@staloysius.ac.in, hemasree71@gmail.com  Mangalore                 Nan         Nan
-2  70  FLAMI DCOSTA            flamidcosta@gmail.com     9108126684  ...                            ruban@staloysius.ac.in  Mangalore                 Nan         Nan
+2023-07-19 13:52:04 [INFO] Running PandasAI with openai LLM...
+2023-07-19 13:52:04 [INFO] Prompt ID: 6240dd65-f6d4-4555-af79-1e38945aad3f
+2023-07-19 13:53:25 [INFO] Question: Give summary of the dataset
 
-[2 rows x 15 columns]
-2023-07-08 11:02:35 [INFO] Executed in: 2.9099531173706055s
-2023-07-08 11:03:49 [INFO] error_code=502 error_message='Bad gateway.' error_param=None error_type=cf_bad_gateway message='OpenAI API error received' stream_error=False
-2023-07-11 19:23:43 [INFO] Question: Give all details from K APARNA
-
-2023-07-11 19:23:43 [INFO] Running PandasAI with openai LLM...
-2023-07-11 19:23:43 [INFO] Prompt ID: 2df8edce-9015-4774-9006-128af11547f6
-2023-07-11 19:23:46 [INFO] 
-                        Code generated:
-                        ```
-                        df[df['name'] == 'K APARNA']
-                        ```
-                    
-2023-07-11 19:23:46 [INFO] 
-Code running:
-```
-df[df['name'] == 'K APARNA']
-```
-2023-07-11 19:23:46 [INFO] Answer:    id      name                 email phone_number linkedin_id  ... referrals_phone_number       referrals_email location companies_worked_at designation
-2   6  K APARNA  aparnak743@gmail.com   9188049406         Nan  ...         +91 9495870533  hemasree71@gmail.com      Nan                 Nan         Nan
-
-[1 rows x 15 columns]
-2023-07-11 19:23:46 [INFO] Executed in: 2.6481735706329346s
-2023-07-11 20:17:41 [INFO] Question: who has Data Scientist
-
-2023-07-11 20:17:41 [INFO] Running PandasAI with openai LLM...
-2023-07-11 20:17:41 [INFO] Prompt ID: 3dcd1e7e-7596-4abb-b603-97556d9409d7
-2023-07-11 20:17:43 [INFO] 
-                        Code generated:
-                        ```
-                        df[df['designation'] == 'Data Scientist']
-                        ```
-                    
-2023-07-11 20:17:43 [INFO] 
-Code running:
-```
-df[df['designation'] == 'Data Scientist']
-```
-2023-07-11 20:17:44 [INFO] Answer: Empty DataFrame
-Columns: [id, name, email, phone_number, linkedin_id, skills, tools, experience, college_name, referrals_name, referrals_phone_number, referrals_email, location, companies_worked_at, designation]
-Index: []
-2023-07-11 20:17:44 [INFO] Executed in: 2.4549057483673096s
-2023-07-11 20:18:12 [INFO] Question: companies worked at wipro
-
-
-2023-07-11 20:18:12 [INFO] Running PandasAI with openai LLM...
-2023-07-11 20:18:12 [INFO] Prompt ID: c315d1b0-3c68-48df-8006-92bdbf5db408
-2023-07-11 20:18:15 [INFO] 
-                        Code generated:
-                        ```
-                        df[df['companies_worked_at'].str.contains('Wipro')]
-                        ```
-                    
-2023-07-11 20:18:15 [INFO] 
-Code running:
-```
-df[df['companies_worked_at'].str.contains('Wipro')]
-```
-2023-07-11 20:18:15 [INFO] Answer:    id  ...                                        designation
-1   5  ...  Data Scientist, Business Analyst, Tech Consult...
-
-[1 rows x 15 columns]
-2023-07-11 20:18:15 [INFO] Executed in: 2.602140188217163s
-2023-07-12 13:17:50 [INFO] Question: Give me details of Anupam Biswas
-
-2023-07-12 13:17:50 [INFO] Running PandasAI with openai LLM...
-2023-07-12 13:17:50 [INFO] Prompt ID: da336b12-7a9a-483b-8dfc-2cb86a4e5903
-2023-07-12 13:17:54 [INFO] 
-                        Code generated:
-                        ```
-                        df[df['name'] == 'Anupam Biswas']
-                        ```
-                    
-2023-07-12 13:17:54 [INFO] 
-Code running:
-```
-df[df['name'] == 'Anupam Biswas']
-```
-2023-07-12 13:17:54 [INFO] Answer:    id           name  ... companies_worked_at                                        designation
-3   7  Anupam Biswas  ...      IBM, Cognizant  Associate Consultant, Business Analytics Lead,...
-
-[1 rows x 15 columns]
-2023-07-12 13:17:54 [INFO] Executed in: 4.3542234897613525s
-2023-07-12 13:18:18 [INFO] Question: Who has skills Java
-
-2023-07-12 13:18:18 [INFO] Running PandasAI with openai LLM...
-2023-07-12 13:18:18 [INFO] Prompt ID: a1fcc980-c3c8-44e0-b3de-3d05afd301a3
-2023-07-12 13:18:21 [INFO] 
-                        Code generated:
-                        ```
-                        df[df['skills'].str.contains('Java')]
-                        ```
-                    
-2023-07-12 13:18:21 [INFO] 
-Code running:
-```
-df[df['skills'].str.contains('Java')]
-```
-2023-07-12 13:18:21 [INFO] Answer:    id      name                           email  ...   location companies_worked_at designation
-0   4    SHRIYA  2117108shriya@staloysius.ac.in  ...  Mangalore                 Nan         Nan
-2   6  K APARNA            aparnak743@gmail.com  ...        Nan                 Nan         Nan
-
-[2 rows x 15 columns]
-2023-07-12 13:18:21 [INFO] Executed in: 3.0252981185913086s
-2023-07-12 16:53:34 [INFO] Question: Give the name of who has skills Machine Learning
-
-2023-07-12 16:53:34 [INFO] Running PandasAI with openai LLM...
-2023-07-12 16:53:34 [INFO] Prompt ID: 92435256-846a-40d0-bfe7-f6bb54e86bbb
-2023-07-12 16:53:38 [INFO] 
-                        Code generated:
-                        ```
-                        df[df['skills'].str.contains('Machine Learning')]['name']
-                        ```
-                    
-2023-07-12 16:53:38 [INFO] 
-Code running:
-```
-df[df['skills'].str.contains('Machine Learning')]['name']
-```
-2023-07-12 16:53:38 [INFO] Answer: 1    Srinivas Kandlikar
-Name: name, dtype: object
-2023-07-12 16:53:38 [INFO] Executed in: 3.2163383960723877s
-2023-07-15 08:10:38 [INFO] Question: Give only the details of those who have linkedin_id
-
-2023-07-15 08:10:38 [INFO] Running PandasAI with openai LLM...
-2023-07-15 08:10:38 [INFO] Prompt ID: b9bbfa4f-76f0-49cb-ba14-cc15e0cda098
-2023-07-15 08:10:41 [INFO] 
-                        Code generated:
-                        ```
-                        df[df['linkedin_id'].notnull()]
-                        ```
-                    
-2023-07-15 08:10:41 [INFO] 
-Code running:
-```
-df[df['linkedin_id'].notnull()]
-```
-2023-07-15 08:10:41 [INFO] Answer:    id                name  ...                                companies_worked_at                             designation
-0   1              SHRIYA  ...                                                Nan                                     Nan
-1   2  Srinivas Kandlikar  ...  Ineuron.ai, HCL Technologies, Prithvi Consulti...  Technical Lead, Sr. Software Developer
-2   3       Mayank Sahdev  ...                                Deloitte Consulting                                     Nan
-3   4        Ramyashree K  ...                                                Nan                                     Nan
-4   5        JEROME MANOJ  ...                        Wipro Ltd, Asset Healthcare                   Data Science Engineer
-5   6        Rachana Alva  ...                                                Nan                                     Nan
-6   7         ARYA BABU M  ...                                                Nan                                     Nan
-7   8   CLEONA J MONTEIRO  ...                                                Nan                                     Nan
-8   9       Monish Shetty  ...                                                Nan                                     Nan
-
-[9 rows x 15 columns]
-2023-07-15 08:10:41 [INFO] Executed in: 3.698974370956421s
-2023-07-15 08:10:54 [INFO] Question: Give only the details of those who have linkedin_id not Nan
-
-
-2023-07-15 08:10:54 [INFO] Running PandasAI with openai LLM...
-2023-07-15 08:10:54 [INFO] Prompt ID: bb4c0ce4-d03b-44da-a579-73f6736a253d
-2023-07-15 08:10:58 [INFO] 
-                        Code generated:
-                        ```
-                        df[df['linkedin_id'].notnull()]
-                        ```
-                    
-2023-07-15 08:10:58 [INFO] 
-Code running:
-```
-df[df['linkedin_id'].notnull()]
-```
-2023-07-15 08:10:58 [INFO] Answer:    id                name  ...                                companies_worked_at                             designation
-0   1              SHRIYA  ...                                                Nan                                     Nan
-1   2  Srinivas Kandlikar  ...  Ineuron.ai, HCL Technologies, Prithvi Consulti...  Technical Lead, Sr. Software Developer
-2   3       Mayank Sahdev  ...                                Deloitte Consulting                                     Nan
-3   4        Ramyashree K  ...                                                Nan                                     Nan
-4   5        JEROME MANOJ  ...                        Wipro Ltd, Asset Healthcare                   Data Science Engineer
-5   6        Rachana Alva  ...                                                Nan                                     Nan
-6   7         ARYA BABU M  ...                                                Nan                                     Nan
-7   8   CLEONA J MONTEIRO  ...                                                Nan                                     Nan
-8   9       Monish Shetty  ...                                                Nan                                     Nan
-
-[9 rows x 15 columns]
-2023-07-15 08:10:58 [INFO] Executed in: 3.3316614627838135s
-2023-07-15 08:11:18 [INFO] Question: Give only the details of those who dont have linkedin_id not Nan
-
-
-2023-07-15 08:11:18 [INFO] Running PandasAI with openai LLM...
-2023-07-15 08:11:18 [INFO] Prompt ID: 6a802100-a1ae-4e53-b67a-da5853cf0000
-2023-07-15 08:11:21 [INFO] 
-                        Code generated:
-                        ```
-                        df[df['linkedin_id'].notna()]
-                        ```
-                    
-2023-07-15 08:11:21 [INFO] 
-Code running:
-```
-df[df['linkedin_id'].notna()]
-```
-2023-07-15 08:11:21 [INFO] Answer:    id                name  ...                                companies_worked_at                             designation
-0   1              SHRIYA  ...                                                Nan                                     Nan
-1   2  Srinivas Kandlikar  ...  Ineuron.ai, HCL Technologies, Prithvi Consulti...  Technical Lead, Sr. Software Developer
-2   3       Mayank Sahdev  ...                                Deloitte Consulting                                     Nan
-3   4        Ramyashree K  ...                                                Nan                                     Nan
-4   5        JEROME MANOJ  ...                        Wipro Ltd, Asset Healthcare                   Data Science Engineer
-5   6        Rachana Alva  ...                                                Nan                                     Nan
-6   7         ARYA BABU M  ...                                                Nan                                     Nan
-7   8   CLEONA J MONTEIRO  ...                                                Nan                                     Nan
-8   9       Monish Shetty  ...                                                Nan                                     Nan
-
-[9 rows x 15 columns]
-2023-07-15 08:11:21 [INFO] Executed in: 3.516930103302002s
-2023-07-15 08:11:37 [INFO] Question: Give only the details of those who don't have linkedin_id as Nan
-
-
-2023-07-15 08:11:37 [INFO] Running PandasAI with openai LLM...
-2023-07-15 08:11:37 [INFO] Prompt ID: 69d5de27-5849-407a-8c87-f3220e74f199
-2023-07-15 08:11:40 [INFO] 
-                        Code generated:
-                        ```
-                        df[df['linkedin_id'] != 'Nan']
-                        ```
-                    
-2023-07-15 08:11:40 [INFO] 
-Code running:
-```
-df[df['linkedin_id'] != 'Nan']
-```
-2023-07-15 08:11:40 [INFO] Answer:    id                name  ...                                companies_worked_at                             designation
-1   2  Srinivas Kandlikar  ...  Ineuron.ai, HCL Technologies, Prithvi Consulti...  Technical Lead, Sr. Software Developer
-8   9       Monish Shetty  ...                                                Nan                                     Nan
-
-[2 rows x 15 columns]
-2023-07-15 08:11:40 [INFO] Executed in: 3.5280191898345947s
-2023-07-15 08:14:49 [INFO] Question: Only give column linkedin_id which dont have Nan
-
-
-2023-07-15 08:14:49 [INFO] Running PandasAI with openai LLM...
-2023-07-15 08:14:49 [INFO] Prompt ID: a1499eda-50bd-4e05-930b-45ed6cd6efcd
-2023-07-15 08:14:51 [INFO] 
-                        Code generated:
-                        ```
-                        df['linkedin_id'].dropna()
-                        ```
-                    
-2023-07-15 08:14:51 [INFO] 
-Code running:
-```
-df['linkedin_id'].dropna()
-```
-2023-07-15 08:14:51 [INFO] Answer: 0                               Nan
-1     srinivas kandlikar | LinkedIn
-2                               Nan
-3                               Nan
-4                               Nan
-5                               Nan
-6                               Nan
-7                               Nan
-8    linkedin.com/in/monish-shetty/
-Name: linkedin_id, dtype: object
-2023-07-15 08:14:51 [INFO] Executed in: 2.003108263015747s
-2023-07-15 08:19:52 [INFO] Applicable driver not found; attempting to install with Selenium Manager (Beta)
-2023-07-15 08:20:25 [INFO] Applicable driver not found; attempting to install with Selenium Manager (Beta)
-2023-07-15 08:21:16 [INFO] Applicable driver not found; attempting to install with Selenium Manager (Beta)
-2023-07-15 08:21:52 [INFO] Applicable driver not found; attempting to install with Selenium Manager (Beta)
-2023-07-15 08:24:06 [INFO] Applicable driver not found; attempting to install with Selenium Manager (Beta)
-2023-07-15 08:24:40 [INFO] Applicable driver not found; attempting to install with Selenium Manager (Beta)
-2023-07-15 08:29:08 [INFO] Applicable driver not found; attempting to install with Selenium Manager (Beta)
-2023-07-15 14:46:04 [INFO] Question: Give details of those whose skills are Python
-
-2023-07-15 14:46:04 [INFO] Running PandasAI with openai LLM...
-2023-07-15 14:46:04 [INFO] Prompt ID: 8519b2fc-67dd-49fb-9aa3-36b07162ff3e
-2023-07-15 14:46:05 [INFO] 
-                        Code generated:
-                        ```
-                        df[df['skills'] == 'Python']
-                        ```
-                    
-2023-07-15 14:46:05 [INFO] 
-Code running:
-```
-df[df['skills'] == 'Python']
-```
-2023-07-15 14:46:05 [INFO] Answer: Empty DataFrame
-Columns: [id, name, email, phone_number, linkedin_id, skills, tools, experience, college_name, referrals_name, referrals_phone_number, referrals_email, location, companies_worked_at, designation]
-Index: []
-2023-07-15 14:46:05 [INFO] Executed in: 1.7303087711334229s
-2023-07-15 14:46:39 [INFO] Question: Give details of SHRAVYA
-
-2023-07-15 14:46:39 [INFO] Running PandasAI with openai LLM...
-2023-07-15 14:46:39 [INFO] Prompt ID: f805a209-7f9f-4477-b498-9514dcf3be45
-2023-07-15 14:46:40 [INFO] 
-                        Code generated:
-                        ```
-                        df[df['name'] == 'SHRAVYA']
-                        ```
-                    
-2023-07-15 14:46:40 [INFO] 
-Code running:
-```
-df[df['name'] == 'SHRAVYA']
-```
-2023-07-15 14:46:40 [INFO] Answer:    id     name                            email  ...   location companies_worked_at designation
-9  10  SHRAVYA  2117106shravya@staloysius.ac.in  ...  Mangalore                 Nan         Nan
-
-[1 rows x 15 columns]
-2023-07-15 14:46:40 [INFO] Executed in: 1.5499136447906494s
-2023-07-15 14:47:22 [INFO] Applicable driver not found; attempting to install with Selenium Manager (Beta)
-2023-07-15 14:47:37 [INFO] Applicable driver not found; attempting to install with Selenium Manager (Beta)
-2023-07-17 11:18:23 [INFO] error_code=rate_limit_exceeded error_message='Rate limit reached for default-gpt-3.5-turbo in organization org-EPYsHAyT6F430642DVSSLwEX on requests per min. Limit: 3 / min. Please try again in 20s. Contact us through our help center at help.openai.com if you continue to have issues. Please add a payment method to your account to increase your rate limit. Visit https://platform.openai.com/account/billing to add a payment method.' error_param=None error_type=requests message='OpenAI API error received' stream_error=False
-2023-07-17 11:23:55 [INFO] error_code=rate_limit_exceeded error_message='Rate limit reached for default-gpt-3.5-turbo in organization org-EPYsHAyT6F430642DVSSLwEX on requests per min. Limit: 3 / min. Please try again in 20s. Contact us through our help center at help.openai.com if you continue to have issues. Please add a payment method to your account to increase your rate limit. Visit https://platform.openai.com/account/billing to add a payment method.' error_param=None error_type=requests message='OpenAI API error received' stream_error=False
-2023-07-17 14:15:00 [INFO] Applicable driver not found; attempting to install with Selenium Manager (Beta)
-2023-07-17 14:15:08 [INFO] Applicable driver not found; attempting to install with Selenium Manager (Beta)
-2023-07-18 04:48:49 [INFO] error_code=rate_limit_exceeded error_message='Rate limit reached for default-gpt-3.5-turbo in organization org-EPYsHAyT6F430642DVSSLwEX on requests per min. Limit: 3 / min. Please try again in 20s. Contact us through our help center at help.openai.com if you continue to have issues. Please add a payment method to your account to increase your rate limit. Visit https://platform.openai.com/account/billing to add a payment method.' error_param=None error_type=requests message='OpenAI API error received' stream_error=False
-2023-07-18 04:50:12 [INFO] Applicable driver not found; attempting to install with Selenium Manager (Beta)
-2023-07-18 04:50:16 [INFO] Applicable driver not found; attempting to install with Selenium Manager (Beta)
-2023-07-18 18:02:03 [INFO] Question: Who has skills Python
-
-2023-07-18 18:02:03 [INFO] Running PandasAI with openai LLM...
-2023-07-18 18:02:03 [INFO] Prompt ID: cddda6d3-902d-4341-8287-e050135cdbd4
-2023-07-18 18:02:15 [INFO] Question: Who has skill Python
-
-2023-07-18 18:02:15 [INFO] Running PandasAI with openai LLM...
-2023-07-18 18:02:16 [INFO] Prompt ID: ed5281f7-aae4-4927-9b66-cd17ef6afe6e
-2023-07-18 18:02:40 [INFO] Question: Give summary of the data
-
-
-2023-07-18 18:02:40 [INFO] Running PandasAI with openai LLM...
-2023-07-18 18:02:40 [INFO] Prompt ID: 7aff4215-aec8-43d2-81c2-20fa7278d773
-2023-07-18 18:02:46 [INFO] Question: Give a summary of the data
-
-
-2023-07-18 18:02:46 [INFO] Running PandasAI with openai LLM...
-2023-07-18 18:02:46 [INFO] Prompt ID: 4ff97cef-1287-48e5-abe0-5162313665e0
-2023-07-18 18:03:47 [INFO] Question: give details of those who have tools Tableau
-
-2023-07-18 18:03:47 [INFO] Running PandasAI with openai LLM...
-2023-07-18 18:03:47 [INFO] Prompt ID: bc2bd411-cc5c-4c39-aba6-dfc8a0093514
-2023-07-18 18:06:46 [INFO] Question: display the dataset
-
-
-2023-07-18 18:06:46 [INFO] Running PandasAI with openai LLM...
-2023-07-18 18:06:46 [INFO] Prompt ID: c5d539d9-1e7b-44a8-99e9-a6128fc4ee34
-2023-07-18 18:09:05 [INFO] Question: give details of name K APARNA
-
-2023-07-18 18:09:05 [INFO] Running PandasAI with openai LLM...
-2023-07-18 18:09:05 [INFO] Prompt ID: a0fe8834-d7fa-45e9-8206-42f692da2ad9
-2023-07-18 18:09:07 [INFO] 
-                        Code generated:
-                        ```
-                        df[df['name'] == 'K APARNA']
-                        ```
-                    
-2023-07-18 18:09:07 [INFO] 
-Code running:
-```
-df[df['name'] == 'K APARNA']
-```
-2023-07-18 18:09:07 [INFO] Answer:    id      name                 email  ... designation                             unique_id                                            project
-1  12  K APARNA  aparnak743@gmail.com  ...         Nan  5919b961-079d-4902-94e8-03537b083b1b  Gym Management System, Budget Manager-Android ...
-
-[1 rows x 17 columns]
-2023-07-18 18:09:07 [INFO] Executed in: 2.4903481006622314s
-2023-07-18 18:09:35 [INFO] Question: give details of those whose skills are C
-
-
-2023-07-18 18:09:35 [INFO] Running PandasAI with openai LLM...
-2023-07-18 18:09:35 [INFO] Prompt ID: 00365067-c89a-4775-b5e7-c5a3c1f9b437
-2023-07-18 18:09:46 [WARNING] Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x00000244FB52C1F0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed')': /v1/chat/completions
-2023-07-18 18:09:47 [INFO] 
-                        Code generated:
-                        ```
-                        df[df['skills'].str.contains('C')]
-                        ```
-                    
-2023-07-18 18:09:47 [INFO] 
-Code running:
-```
-df[df['skills'].str.contains('C')]
-```
-2023-07-18 18:09:47 [INFO] Answer:    id            name                 email  ... designation                             unique_id                                            project
-0  11  Lily Bangalore     Lily123@gmail.com  ...         Nan  305c6a05-c4f0-41e2-a6ee-f2bf49d9e5d7                                                Nan
-1  12        K APARNA  aparnak743@gmail.com  ...         Nan  5919b961-079d-4902-94e8-03537b083b1b  Gym Management System, Budget Manager-Android ...
-
-[2 rows x 17 columns]
-2023-07-18 18:09:47 [INFO] Executed in: 12.248631477355957s
-2023-07-18 18:11:17 [INFO] Question: Give summary of the data
-
-2023-07-18 18:11:17 [INFO] Running PandasAI with openai LLM...
-2023-07-18 18:11:17 [INFO] Prompt ID: 45505ca6-3faa-4ab7-860e-27faa3e1ca38
-2023-07-18 18:11:18 [INFO] 
+2023-07-19 13:53:25 [INFO] Running PandasAI with openai LLM...
+2023-07-19 13:53:25 [INFO] Prompt ID: 718e3fc5-2133-4a87-926f-884b659b5126
+2023-07-19 13:53:27 [INFO] 
                         Code generated:
                         ```
                         df.info()
                         ```
                     
-2023-07-18 18:11:18 [INFO] 
+2023-07-19 13:53:27 [INFO] 
 Code running:
 ```
 df.info()
 ```
-2023-07-18 18:11:18 [INFO] Answer: None
-2023-07-18 18:11:18 [INFO] Executed in: 1.1021888256072998s
-2023-07-18 18:14:28 [INFO] Question: Give summary of the data
-
-2023-07-18 18:14:28 [INFO] Running PandasAI with openai LLM...
-2023-07-18 18:14:28 [INFO] Prompt ID: 87d8b3ce-e058-4d0e-9900-4b8019c24f43
-2023-07-18 18:14:28 [INFO] Using cached response
-2023-07-18 18:14:28 [INFO] 
-Code running:
-```
-df.info()
-```
-2023-07-18 18:14:28 [INFO] Answer: None
-2023-07-18 18:14:28 [INFO] Executed in: 0.07013273239135742s
-2023-07-18 18:14:50 [INFO] Question: Give skills Python
+2023-07-19 13:53:27 [INFO] Answer: None
+2023-07-19 13:53:27 [INFO] Executed in: 1.566751480102539s
+2023-07-19 13:53:59 [INFO] Question: give the total number of columns
 
 
-2023-07-18 18:14:50 [INFO] Running PandasAI with openai LLM...
-2023-07-18 18:14:50 [INFO] Prompt ID: baf8a054-62b0-4800-8352-374ef832595b
-2023-07-18 18:15:34 [INFO] Question: Give summary of the data
-
-2023-07-18 18:15:34 [INFO] Running PandasAI with openai LLM...
-2023-07-18 18:15:34 [INFO] Prompt ID: f08b842e-ba5d-4f5e-b784-ce651ad9624e
-2023-07-18 18:15:34 [INFO] Using cached response
-2023-07-18 18:15:34 [INFO] 
-Code running:
-```
-df.info()
-```
-2023-07-18 18:15:34 [INFO] Answer: None
-2023-07-18 18:15:34 [INFO] Executed in: 0.023953676223754883s
-2023-07-18 18:15:44 [INFO] Question: Give a summary of the data
-
-2023-07-18 18:15:44 [INFO] Running PandasAI with openai LLM...
-2023-07-18 18:15:44 [INFO] Prompt ID: 942d1c8f-0c26-4fe9-ab4b-572f29ed4907
-2023-07-18 18:15:45 [INFO] 
+2023-07-19 13:53:59 [INFO] Running PandasAI with openai LLM...
+2023-07-19 13:53:59 [INFO] Prompt ID: 416f2a1f-1db1-41bb-ba10-30bf5c9a3b02
+2023-07-19 13:54:02 [INFO] 
                         Code generated:
                         ```
-                        df.info()
+                        total_columns = len(df.columns)
+print(total_columns)
                         ```
                     
-2023-07-18 18:15:45 [INFO] 
+2023-07-19 13:54:02 [INFO] 
 Code running:
 ```
-df.info()
+total_columns = len(df.columns)
+print(total_columns)
 ```
-2023-07-18 18:15:45 [INFO] Answer: None
-2023-07-18 18:15:45 [INFO] Executed in: 1.0315942764282227s
-2023-07-18 18:15:59 [INFO] Question: Give the details of K APARNA
+2023-07-19 13:54:02 [INFO] Answer: 17
+2023-07-19 13:54:02 [INFO] Executed in: 2.832354784011841s
+2023-07-19 13:54:10 [INFO] ====== WebDriver manager ======
+2023-07-19 13:54:11 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-19 13:54:23 [INFO] ====== WebDriver manager ======
+2023-07-19 13:54:25 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-19 14:04:25 [INFO] ====== WebDriver manager ======
+2023-07-19 14:04:26 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-19 14:04:38 [INFO] ====== WebDriver manager ======
+2023-07-19 14:04:39 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-19 14:08:10 [INFO] ====== WebDriver manager ======
+2023-07-19 14:08:11 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-19 14:13:32 [INFO] ====== WebDriver manager ======
+2023-07-19 14:13:34 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-19 14:13:36 [INFO] ====== WebDriver manager ======
+2023-07-19 14:13:43 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-19 14:49:57 [INFO] ====== WebDriver manager ======
+2023-07-19 14:49:59 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-19 14:50:04 [INFO] ====== WebDriver manager ======
+2023-07-19 14:50:06 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-19 16:37:46 [INFO] ====== WebDriver manager ======
+2023-07-19 16:37:48 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-19 16:37:52 [INFO] ====== WebDriver manager ======
+2023-07-19 16:37:53 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-19 16:39:17 [INFO] ====== WebDriver manager ======
+2023-07-19 16:39:18 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-19 16:39:43 [INFO] ====== WebDriver manager ======
+2023-07-19 16:39:44 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-19 16:40:13 [INFO] ====== WebDriver manager ======
+2023-07-19 16:40:14 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-19 16:41:06 [INFO] ====== WebDriver manager ======
+2023-07-19 16:41:07 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-19 16:43:25 [INFO] ====== WebDriver manager ======
+2023-07-19 16:43:25 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-19 16:50:02 [INFO] ====== WebDriver manager ======
+2023-07-19 16:50:03 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-19 16:52:49 [INFO] ====== WebDriver manager ======
+2023-07-19 16:52:50 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-19 21:47:32 [INFO] ====== WebDriver manager ======
+2023-07-19 21:47:34 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-19 21:48:20 [INFO] ====== WebDriver manager ======
+2023-07-19 21:48:21 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-19 22:20:11 [INFO] ====== WebDriver manager ======
+2023-07-19 22:20:12 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-19 22:25:59 [INFO] Question: Give the details of rows and columns of the data
 
-
-2023-07-18 18:15:59 [INFO] Running PandasAI with openai LLM...
-2023-07-18 18:15:59 [INFO] Prompt ID: 605a1139-c759-40e7-839d-78b957af1bcb
-2023-07-18 18:16:01 [INFO] 
+2023-07-19 22:25:59 [INFO] Running PandasAI with openai LLM...
+2023-07-19 22:25:59 [INFO] Prompt ID: ac79e8ea-552c-4aed-a5fd-7a036c91c1eb
+2023-07-19 22:26:00 [INFO] 
                         Code generated:
                         ```
-                        df[df['name'] == 'K APARNA']
+                        df.shape
                         ```
                     
-2023-07-18 18:16:01 [INFO] 
+2023-07-19 22:26:00 [INFO] 
 Code running:
 ```
-df[df['name'] == 'K APARNA']
+df.shape
 ```
-2023-07-18 18:16:01 [INFO] Answer:    id  ...                                            project
-1   2  ...  Gym Management System, Budget Manager-Android ...
-
-[1 rows x 17 columns]
-2023-07-18 18:16:01 [INFO] Executed in: 1.3382697105407715s
-2023-07-18 18:16:26 [INFO] Question: Give the details of Lily
-
-
-
-2023-07-18 18:16:26 [INFO] Running PandasAI with openai LLM...
-2023-07-18 18:16:26 [INFO] Prompt ID: 406f8eca-9ab6-4a78-b469-2a1a1d926a37
-2023-07-18 18:16:27 [INFO] 
-                        Code generated:
-                        ```
-                        df[df['name'] == 'Lily Bangalore']
-                        ```
-                    
-2023-07-18 18:16:27 [INFO] 
-Code running:
-```
-df[df['name'] == 'Lily Bangalore']
-```
-2023-07-18 18:16:27 [INFO] Answer:    id  ... project
-0   1  ...     Nan
-
-[1 rows x 17 columns]
-2023-07-18 18:16:27 [INFO] Executed in: 1.391937255859375s
-2023-07-18 18:18:26 [INFO] ====== WebDriver manager ======
-2023-07-18 18:18:31 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
-2023-07-18 18:19:23 [INFO] ====== WebDriver manager ======
-2023-07-18 18:19:24 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
-2023-07-18 18:23:53 [INFO] ====== WebDriver manager ======
-2023-07-18 18:23:54 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-19 22:26:00 [INFO] Answer: 2 17
+2023-07-19 22:26:00 [INFO] Executed in: 0.9750356674194336s
+2023-07-19 22:26:36 [INFO] ====== WebDriver manager ======
+2023-07-19 22:26:37 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-19 22:28:16 [INFO] ====== WebDriver manager ======
+2023-07-19 22:28:17 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-19 22:28:42 [INFO] ====== WebDriver manager ======
+2023-07-19 22:28:43 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-19 22:28:58 [INFO] ====== WebDriver manager ======
+2023-07-19 22:29:03 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-19 22:29:04 [INFO] ====== WebDriver manager ======
+2023-07-19 22:29:10 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-19 22:29:10 [INFO] ====== WebDriver manager ======
+2023-07-19 22:29:17 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-19 22:29:20 [INFO] ====== WebDriver manager ======
+2023-07-19 22:29:25 [INFO] ====== WebDriver manager ======
+2023-07-19 22:29:26 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-19 22:29:28 [INFO] ====== WebDriver manager ======
+2023-07-19 22:29:32 [INFO] ====== WebDriver manager ======
+2023-07-19 22:29:34 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-19 22:29:36 [INFO] ====== WebDriver manager ======
+2023-07-19 22:29:36 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-19 22:29:41 [INFO] ====== WebDriver manager ======
+2023-07-19 22:29:43 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-19 22:29:55 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-19 22:29:59 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-19 22:58:17 [INFO] ====== WebDriver manager ======
+2023-07-19 22:58:18 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-20 09:54:59 [INFO] ====== WebDriver manager ======
+2023-07-20 09:55:00 [INFO] Get LATEST chromedriver version for google-chrome
+2023-07-20 09:55:01 [INFO] About to download new driver from https://chromedriver.storage.googleapis.com/114.0.5735.90/chromedriver_win32.zip
+2023-07-20 09:55:05 [INFO] Driver has been saved in cache [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90]
+2023-07-20 09:55:31 [INFO] ====== WebDriver manager ======
+2023-07-20 09:55:32 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-20 09:55:54 [INFO] ====== WebDriver manager ======
+2023-07-20 09:55:56 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-20 10:00:25 [INFO] ====== WebDriver manager ======
+2023-07-20 10:00:26 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-20 10:00:37 [INFO] ====== WebDriver manager ======
+2023-07-20 10:00:38 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-20 10:01:21 [INFO] ====== WebDriver manager ======
+2023-07-20 10:01:22 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-20 10:02:01 [INFO] ====== WebDriver manager ======
+2023-07-20 10:02:02 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-20 10:05:00 [INFO] ====== WebDriver manager ======
+2023-07-20 10:05:01 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-20 10:09:50 [INFO] ====== WebDriver manager ======
+2023-07-20 10:09:51 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-20 10:10:07 [INFO] ====== WebDriver manager ======
+2023-07-20 10:10:08 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-20 10:11:00 [INFO] ====== WebDriver manager ======
+2023-07-20 10:11:01 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-20 10:11:48 [INFO] ====== WebDriver manager ======
+2023-07-20 10:11:49 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-20 10:13:05 [INFO] ====== WebDriver manager ======
+2023-07-20 10:13:05 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-20 10:13:51 [INFO] ====== WebDriver manager ======
+2023-07-20 10:13:51 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-20 10:14:41 [INFO] ====== WebDriver manager ======
+2023-07-20 10:14:42 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-20 10:16:02 [INFO] ====== WebDriver manager ======
+2023-07-20 10:16:03 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-20 10:16:28 [INFO] ====== WebDriver manager ======
+2023-07-20 10:16:29 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-20 11:36:00 [INFO] ====== WebDriver manager ======
+2023-07-20 11:36:02 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-20 15:27:21 [INFO] ====== WebDriver manager ======
+2023-07-20 15:27:22 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-20 15:31:49 [INFO] ====== WebDriver manager ======
+2023-07-20 15:31:50 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache
+2023-07-20 15:33:56 [INFO] ====== WebDriver manager ======
+2023-07-20 15:33:56 [INFO] Driver [C:\Users\LENOVO\.wdm\drivers\chromedriver\win32\114.0.5735.90\chromedriver.exe] found in cache

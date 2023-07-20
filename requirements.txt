@@ -5,3 +5,5 @@ fuzzywuzzy
 mysql-connector-python
 selenium
 webdriver_manager
+streamlit-option-menu
+streamlit_extras
