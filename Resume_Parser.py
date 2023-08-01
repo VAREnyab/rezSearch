@@ -24,8 +24,8 @@ from webdriver_manager.chrome import ChromeDriverManager
 st.set_page_config(layout="wide")
 
 # API Key
-key1 = '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'
-key2 = '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'
+key1 = (OpenAI_API_KEY)
+key2 = (OpenAI_API_KEY)
 
 
 openai.api_key = key1
@@ -410,7 +410,10 @@ def main_content():
         st.markdown("<h2>RezGPT</h2>", unsafe_allow_html=True)
         st.markdown("Welcome to RezGPT, your one-stop destination for insightful conversations and comprehensive information about your candidates. Engage in real-time chat with our intelligent platform to uncover valuable details and gain deeper insights into each candidate's qualifications, experience, and skills.")      
         
-        query = "SELECT * FROM resume_detail WHERE unique_id LIKE '1000%'"
+        query = '''SELECT name, email, phone_number, linkedin_id, skills, tools, experience, college_name,
+                    referrals_name, referrals_phone_number, referrals_email, location, companies_worked_at,
+                    designation, project
+                    FROM resume_detail WHERE unique_id LIKE "1000%"'''
         cursor.execute(query)
 
         # Fetch the column names from the cursor description
@@ -426,12 +429,13 @@ def main_content():
         working_rezgpt = ''' **How it works**  \n - Chat with us  \n - Wait for Processing  \n - View Extracted Details'''
         
         # Prompt the user for columns to display
-        prompt_from_user = st.text_area("Send a message: ",help=working_rezgpt)
+        prompt_from_user = st.text_area("Send a message: ", help=working_rezgpt)
 
         if st.button("Generate:"):
             if prompt_from_user:
                 with st.spinner("Generating response..."):
                     st.write(pandas_ai(df_detail, prompt=prompt_from_user))
+                    # b = st.write(generate_prompt(a,"summaries_prompt"))
             else:
                 st.warning("Enter a prompt")
 
@@ -547,7 +551,7 @@ def main_content():
         working_job = ''' **How it works**  \n - Search for job openings here  \n - Filter the job postings  \n - Wait for Processing  \n - View Extracted Details'''
 
         # query search on google jobs site with location mentioned
-        query = st.text_input("What jobs are you looking for: ", help=working_job)
+        query = st.text_input("What jobs/company are you looking for: ", help=working_job)
         query = '+'.join(query.lower().split())
         url = f"https://www.google.com/search?q={query}&oq=/&aqs=chrome..69i57j69i59j0i512j0i22i30i625l4j69i60.4543j0j7&sourceid=chrome&ie=UTF-8&ibp=htl;jobs&sa=X&ved=2ahUKEwjXsv-_iZP9AhVPRmwGHX5xDEsQutcGKAF6BAgPEAU&sxsrf=AJOqlzWGHNISzgpAUCZBmQA1mWXXt3I7gA:1676311105893#htivrt=jobs&htidocid=GS94rKdYQqQAAAAAAAAAAA%3D%3D&fpstate=tldetail"
         browser.get(url)
@@ -654,13 +658,48 @@ def main_content():
                     description.append(elements[0].text)
                 else:
                     pass
+            
             df=pd.DataFrame(zip(role,company,location,description),columns=['Role','Company','Location','Description'])
             
-            st.markdown("<br>", unsafe_allow_html=True)
-            st.markdown("<h3>Jobs Available</h3>", unsafe_allow_html=True)
-            st.markdown("<br>", unsafe_allow_html=True)
-            st.dataframe(df)
-    
+            with st.container():
+                st.markdown("""
+                            <style>
+                            .css-1r6slb0.e1tzin5v1 {
+                            background: #F0F2F6;
+                            padding: 1.5rem;
+                            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+                            text-align: center;
+                            border-radius: 0.25rem;
+                            
+                            }
+
+                            .css-1wivap2.e16fv1kl3 {
+                                color: #FF4B4B;
+                            }
+                            
+                            .css-16idsys.e16nr0p34 {
+                            color:  rgb(17 24 39 / 1) !important;
+                        }
+                        
+                        .css-wvv94f.e16fv1kl2 {
+                            justify-content: center !important;
+                            display: flex !important;
+                        }
+                                </style>
+                                """
+                , unsafe_allow_html=True)
+                
+                col1, col2, col3 = st.columns(3)
+                col1.metric("👩‍💼 Jobs Found", df.shape[0])
+                col2.metric("💰Companies Found", df['Company'].nunique())
+                col3.metric("📍Locations Available", df['Location'].nunique())
+                            
+            with st.expander("View the Details here"):
+                st.markdown("<br>", unsafe_allow_html=True)
+                st.markdown("<h3>Jobs Available</h3>", unsafe_allow_html=True)
+                st.markdown("<br>", unsafe_allow_html=True)
+                st.dataframe(df)
+            
     # Close the cursor and database connection
     cursor.close()
     db.close()
@@ -671,8 +710,8 @@ try:
     main_content()
 except:
     # Error
-    with st.expander("Find out more"):
-        st.markdown("**OH NO!!!**")
+    with st.expander("Something went wrong. Try Re-Loading"):
+        st.error('Oops', icon="🚨")
         st.markdown("We are sorry for this issue")
         st.markdown("We will fix it as soon as possible.")
         st.markdown("Until then please check out our other tools.")
