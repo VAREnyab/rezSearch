@@ -1,6 +1,6 @@
 # rezSearch
 
-![](title.png)
+![Uploading title.png…]()
 
 Greetings to the rezSearch repository! This project is here to make your job search a breeze, assisting you in effortlessly finding employment opportunities. Additionally, we specialize in extracting organized details from resumes and transforming them into a consistent format. This simplifies the process, making it smoother for you to manage, analyze, and delve into the information.
 
